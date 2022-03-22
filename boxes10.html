@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="ihover-gh-pages/ihover-gh-pages/src/ihover.css" />
+  <link rel="stylesheet" href="ihover-gh-pages/ihover-gh-pages/src/ihover.min.css" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+  /* Variabes */
+/* Mixin */
+/* Grid  */
+/* Media Queries    */
+/* Main Layout Blocks */
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 2.6em;
+  text-transform: uppercase;
+}
+
+.container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.inner-wrap {
+  overflow: hidden;
+  position: relative;
+  /* float: left;
+  width: 32%; */
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url(boxsizing.htc);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-right: 2%;
+}
+.inner-wrap:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 480px) {
+  .inner-wrap {
+    width: 98%;
+    margin: 1%;
+  }
+}
+
+.link {
+  float: left;
+  width: 49%;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url(boxsizing.htc);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-right: 2%;
+}
+.link:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 480px) {
+  .link {
+    width: 98%;
+    margin: 1%;
+  }
+}
+
+.body {
+  /* background: #82d2e5; */
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: center;
+  color: #08738d;
+  height: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.inner-wrap {
+  position: relative;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 90%;
+  background: #fff;
+  border: solid 1px #fff;
+  color: #82d2e5;
+  padding: 20px 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url(boxsizing.htc);
+}
+
+.tooltip:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 15px 15px 0;
+  border-color: #FFFFFF transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -15px;
+  left: 45%;
+}
+
+.button, .link {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -khtml-border-radius: 5px;
+  position: relative;
+  bottom: 0;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-top: 100px;
+  padding: 20px 10px;
+}
+.button:hover, .link:hover {
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  background: #82d2e5;
+  border: solid 1px #fff;
+  color: #fff;
+}
+
+.button {
+  background: #82d2e5;
+  color: #fff;
+  border: solid 1px #fff;
+}
+
+.link {
+  background: #fff;
+  color: #ffa600;
+  border: solid 1px #ffa600;
+}
+.ih-item.square {
+
+    width: auto;
+}
+.ih-item.square.effect1.colored .info {
+    background: #3ab5d2;
+    
+}
+.txtShade {
+    color:#08738d;
+    text-shadow: 3px 3px 2px rgb(79, 140, 155);
+    font-size: 34px;;
+}
+  </style>
+</head>
+<body class="body">
+  <div class="wrapper">
+    <h1>LMK</h1>
+    <h2>Our Services </h2>
+    <p>Services Online</p>
+    <div class="container">
+
+<div class="row col-sm-12">
+<div class="col-sm-4">
+    <div class="inner-wrap">
+        
+        <div class="button">
+               
+           
+
+ <!-- colored -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="#">
+    <div class="img"><h3 class="txtShade">Utility Services</h3></div>
+    <div class="info">
+        <p><i class="material-icons" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;">cloud</i></p>
+        
+    </div></a></div>
+<!-- end colored -->
+        <p>Explore..</p>    
+        </div>
+      </div>
+
+</div>
+
+<div class="col-sm-4">
+
+    
+     
+    <div class="inner-wrap">
+        <div class="button">
+               
+            
+
+ <!-- colored -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="#">
+    <div class="img"><h3 class="txtShade">Bus Ticket Booking</h3></div>
+    <div class="info">
+        <p><i class="material-icons" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;">line_style</i></p>
+        
+    </div></a></div>
+<!-- end colored -->
+        <p>Explore..</p>    
+        </div>
+      </div>
+</div>
+
+<div class="col-sm-4">
+    <div class="inner-wrap">
+        <div class="button">
+               
+          
+
+ <!-- colored -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="#">
+    <div class="img"><h3 class="txtShade">Online Services</h3></div>
+    <div class="info">
+        <p><i class="material-icons" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;">important_devices</i></p>
+        
+    </div></a></div>
+<!-- end colored -->
+        <p>Explore..</p>    
+        </div>
+      </div>
+    
+</div>
+
+</div>
+
+
+      
+    </div>
+  </div>
+  
+
+
+</body>
+</html>

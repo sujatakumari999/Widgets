@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
+    <div class="row">
+        <div class="col-sm-12" style="background-color: lavender;">
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" aria-expanded="true" data-parent="#accordion" href="#panel1">Create New Project</a>
+                        </h4>
+                    </div>
+                    <div id="panel1" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <br />
+
+               
+                        </div>
+
+                    </div>                    
+
+                </div>
+
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" aria-expanded="false" data-toggle="collapse" data-parent="#accordion" href="#panel2">Edit Project</a>
+                        </h4>
+                    </div>
+                    <div id="panel2" class="panel-collapse collapse">
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <%--    <div class="form-group">
+                                        <label for="fname">Search</label>
+                                        <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="search by project title" onkeyup="Search(this);" ClientIDMode="Static"></asp:TextBox>
+
+                                    </div>--%>
+
+                                    <div class="alert alert-info">
+                                        <strong>Info!</strong> Use the search box to search.
+                                    </div>
+                                    <label for="fnsrch">Search by Project Title:</label>
+                                    <div class="glyphicon">
+                                        <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                                        <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control glyphicon glyphicon-search" placeholder="search by project title" onkeyup="Search(this);" ClientIDMode="Static"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <br />
+
+
+                            </div>
+                            <%--  body--%>
+
+                           
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <asp:HiddenField ID="PaneName" runat="server" />
+    </div>
+
+<script type="text/javascript">
+        jQuery(function ($) {
+            var $active = $('#accordion .panel-collapse.in').prev().addClass('active');
+            $active.find('a').prepend('<i class="glyphicon glyphicon-minus"></i>');
+            $('#accordion .panel-heading').not($active).find('a').prepend('<i class="glyphicon glyphicon-plus"></i>');
+            $('#accordion').on('show.bs.collapse', function (e) {
+                $('#accordion .panel-heading.active').removeClass('active').find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
+                $(e.target).prev().addClass('active').find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
+            })
+        });
+    </script>
+
+
+</body>
+</html>

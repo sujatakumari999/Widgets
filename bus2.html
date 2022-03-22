@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Lobster);
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  z-index: 99;
+  text-align: center;
+  background: #DD2E44;
+}
+.nav ul {
+  margin: 0;
+}
+.nav li {
+  display: inline-block;
+  margin: 0 5%;
+  padding: 20px 10px;
+  color: #fff;
+}
+.nav li a {
+  text-decoration: none;
+  color: inherit;
+}
+@media (max-width: 500px) {
+  .nav li {
+    margin: 0 1%;
+    padding: 5px 5px;
+  }
+}
+.nav .logo {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Lobster';
+  font-size: 2em;
+  color: #fff;
+}
+
+.banner {
+  height: 25em;
+  overflow: hidden;
+  background: rgba(221, 46, 68, 0.5) url("http://cdn.history.com/sites/2/2015/02/golden-gate-bridge-iStock_000019197672Large-H.jpeg") no-repeat;
+  background-position: 50% 0%;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+.banner:before {
+  content: '';
+  display: block;
+  position: relative;
+  top: -50%;
+  left: -25%;
+  height: 70%;
+  width: 200%;
+  background: #DD2E44;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transform: rotateZ(-6deg) skew(-6deg);
+          transform: rotateZ(-6deg) skew(-6deg);
+}
+@media (500px) {
+  .banner:before {
+    -webkit-transform: rotateZ(0deg) skew(0deg);
+            transform: rotateZ(0deg) skew(0deg);
+  }
+}
+.banner .heading {
+  position: absolute;
+  top: 5vmax;
+  left: 2vmax;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 6em;
+  font-family: 'Lobster', cursive;
+  -webkit-transform: rotateZ(-6deg);
+          transform: rotateZ(-6deg);
+  text-shadow: 2px 2px 0px #62101a, 4px 4px 0px #781420, 6px 6px 0px #8e1726, 8px 8px 0px #a41b2c, 10px 10px 0px #ba1e32;
+}
+@media (max-width: 600px) {
+  .banner .heading {
+    font-size: 15vmin;
+  }
+}
+
+.offset-wrap {
+  margin: -10em auto 0 auto;
+}
+
+.content-card {
+  background: #fff;
+  width: 70vw;
+  max-width: 700px;
+  margin: 4em auto;
+  padding: 2em;
+  border-radius: 5px;
+  font-size: 1.1em;
+  color: rgba(0, 0, 0, 0.67);
+  line-height: 1.6;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 450px) {
+  .content-card {
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+}
+.content-card h2 {
+  margin: 0;
+  display: inline-block;
+}
+.content-card h2:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 40%;
+  background: #DD2E44;
+  position: relative;
+  bottom: -0.2em;
+}
+
+.slogan {
+  text-align: center;
+  color: #DD2E44;
+  font-size: 2em;
+  padding: 10vh 5vw;
+  background-color: white;
+  background-image: linear-gradient(30deg, white 12%, transparent 12.5%, transparent 87%, white 87.5%, white), linear-gradient(150deg, white 12%, transparent 12.5%, transparent 87%, white 87.5%, white), linear-gradient(30deg, white 12%, transparent 12.5%, transparent 87%, white 87.5%, white), linear-gradient(150deg, white 12%, transparent 12.5%, transparent 87%, white 87.5%, white), linear-gradient(60deg, #f7f7f7 25%, transparent 25.5%, transparent 75%, #f7f7f7 75%, #f7f7f7), linear-gradient(60deg, #f7f7f7 25%, transparent 25.5%, transparent 75%, #f7f7f7 75%, #f7f7f7);
+  background-size: 40px 70px;
+  background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+}
+.slogan blockquote {
+  margin: 0 auto;
+}
+
+.pricing {
+  background: #DD2E44;
+  text-align: center;
+  padding: 4em 1em;
+}
+.pricing h1 {
+  color: #fff;
+  padding: 0.5em;
+  margin: 0 auto;
+  display: inline-block;
+  text-shadow: 2px 2px 1px #ba1e32;
+}
+.pricing h3 {
+  padding: 5px 10px;
+  color: #ba1e32;
+}
+.pricing .pricing-items {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  color: rgba(0, 0, 0, 0.67);
+}
+@media (max-width: 800px) {
+  .pricing .pricing-items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-flow: column;
+  }
+}
+.pricing .pricing-items .price-item {
+  width: 30%;
+  height: 450px;
+  max-width: 350px;
+  position: relative;
+  background: #fff;
+  margin: 2vh 3%;
+  border-radius: 5px;
+  background: -webkit-gradient(linear, right bottom, left top, color-stop(50%, #f8f8f8), color-stop(50%, #fff));
+  background: linear-gradient(to top left, #f8f8f8 50%, #fff 50%);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+.pricing .pricing-items .price-item:hover {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+.pricing .pricing-items .price-item .price-info-item {
+  margin: 0 auto;
+  padding: 15px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+@media (max-width: 800px) {
+  .pricing .pricing-items .price-item {
+    width: 70vw;
+  }
+}
+.pricing .pricing-items .price-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+.pricing .pricing-items .price-item ul h3 {
+  text-align: left;
+  margin: 2vh;
+  padding: 10px;
+}
+.pricing .pricing-items .price-item ul h3:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 40%;
+  background: #DD2E44;
+  position: relative;
+  bottom: -0.1em;
+}
+.pricing .price-info {
+  text-align: left;
+}
+.pricing .price-info .price-info-item {
+  padding: 10px 5px;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.pricing .price-info .price-info-item .fa {
+  float: right;
+}
+.pricing .price-info .unchecked {
+  color: rgba(179, 179, 179, 0.67);
+}
+.pricing button.buy-now {
+  background: transparent;
+  padding: 5px 10px;
+  border: 3px solid #DD2E44;
+  border-radius: 5px;
+  font-size: 1.5em;
+  color: #DD2E44;
+  margin: 25px auto;
+  -webkit-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+.pricing button.buy-now:hover {
+  cursor: pointer;
+  color: #fff;
+  border-color: #DD2E44;
+  background: #DD2E44;
+  -webkit-transition: all 100ms ease-out;
+  transition: all 100ms ease-out;
+}
+.pricing .price {
+  background: #333;
+  width: 100%;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0 0 5px 5px;
+}
+.pricing .price .item-price {
+  font-size: 2em;
+  font-weight: 300;
+  color: #888;
+}
+.pricing .best-seller {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #47CF73;
+  top: -1.5em;
+  right: -1.5em;
+  border: 8px solid #fff;
+  font-size: 0.75em;
+}
+.pricing .best-seller span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: 600;
+  color: #fff;
+}
+.pricing .pro {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #FEDD31;
+  top: -1.5em;
+  right: -1.5em;
+  border: 8px solid #fff;
+  font-size: 1em;
+}
+.pricing .pro span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: 600;
+  color: #fff;
+}
+
+.footer {
+  background: #333;
+}
+.footer .foot-note {
+  margin: 0 auto;
+  text-align: center;
+  padding: 2vh;
+  font-family: 'Lobster';
+  font-size: 2em;
+  color: #DD2E44;
+}
+.footer .legal {
+  background: #222;
+  padding: 1vh;
+  color: #666;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+  </style>
+</head>
+<body>
+     
+<div class="banner">
+  <h1 class="heading">Planning Journey!</h1>
+</div>
+<div class="offset-wrap">
+  <div class="content-card">
+    <h2>Something?</h2>
+    <p>Lorem ipsum dolor sit amet, aeterno omittam inciderint et eum. Ei maluisset honestatis eum. Scripta minimum dignissim ne usu. Ne vel aperiam platonem hendrerit, usu ne lorem vivendum. No usu dictas aliquip probatus, ut enim forensibus eum, ei discere tibique repudiare his. Vim id ceteros voluptua.</p>
+    <p>Eu eos graece scripserit, prima vocibus voluptatum cu eum. Option constituto ne est. Fabulas democritum efficiantur pro ut. Natum offendit repudiandae te vix, et vero mediocrem omittantur per.</p>
+    <p>Patrioque adipiscing has ex, oratio meliore explicari vix at, malorum hendrerit reprehendunt nam an. Et mel modus nulla impedit, ne nam iudico conceptam. Usu an tempor dolores, nam elaboraret scripserit ut, has an quas ubique recteque. Odio aeque id sit, no sint labitur alterum vel. Et duo quando interpretaris, odio elitr mel an, eos ad prompta labitur.</p>
+  </div>
+ 
+  
+</div>
+
+
+
+</body>
+</html>

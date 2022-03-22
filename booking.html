@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+
+.CETBookingSearch {
+  color: #f8f2ea;
+  font-family: Arial, sans-serif;
+  /* Creating a universal focus on items that are focused on for just the booking search */
+}
+.CETBookingSearch [data-displayed="true"] {
+  display: block;
+}
+.CETBookingSearch [data-displayed="false"] {
+  display: none;
+}
+.CETBookingSearch * {
+  box-sizing: border-box;
+}
+.CETBookingSearch .cet-pos-r {
+  position: absolute;
+  margin: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.CETBookingSearch .CETColumns {
+  clear: both;
+  padding: 0;
+  margin: 0;
+}
+.CETBookingSearch .cet-col-6 {
+  width: 48%;
+  float: left;
+}
+.CETBookingSearch p {
+  margin: 5px 0;
+}
+.CETBookingSearch p a {
+  line-height: 1.2;
+}
+.CETBookingSearch *:focus,
+.CETBookingSearch select:focus + .select-content {
+  box-shadow: 0 0 4px 1px #68b4ff;
+  outline: none;
+}
+.CETBookingSearch .booking-promo-code-entry input {
+  display: none;
+  width: 100%;
+  padding: 2px 0 0 5px;
+}
+.CETBookingSearch .select-wrapper {
+  border: 1px solid #999;
+  position: relative;
+  background-color: #fff;
+  line-height: 30px;
+  color: #4a4a4a;
+}
+.CETBookingSearch .select-wrapper .select-content {
+  display: block;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 20px 0 8px;
+}
+.CETBookingSearch .select-wrapper i {
+  font-size: 20px;
+}
+.CETBookingSearch .select-wrapper select {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  z-index: 2;
+}
+.CETBookingSearch .cet-icon {
+  right: 0;
+  padding: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  font-size: 20px;
+  position: absolute;
+  pointer-events: none;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] {
+  margin: 0;
+  background-color: #141414;
+  font-size: 12px;
+  padding: 14px;
+  max-width: 220px;
+  height: 425px;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'].light {
+  background-color: #DDDDDD;
+  color: #4a4a4a;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'].light a,
+.CETBookingSearch [data-theme='layouts/standardBooker'].light span.fa-check-circle-o {
+  color: #4a4a4a;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booker-header {
+  font-family: 'TeXGyreAdventorRegular', Arial, sans-serif;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .first {
+  padding-right: 2%;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .input-wrapper {
+  margin: 8px 0;
+  position: relative;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .select-wrapper i {
+  font-size: 13px;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .select-content {
+  background: #D2D2D2;
+  background: -o-linear-gradient(#FFFFFF, #E6E6E6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#E6E6E6', GradientType=0);
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .date-inputs input {
+  width: 100%;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] a {
+  text-decoration: underline;
+  color: #fff;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] input,
+.CETBookingSearch [data-theme='layouts/standardBooker'] select {
+  min-height: 30px;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] input {
+  background: #f7f7f7;
+  background: -o-linear-gradient(#e6e6e6, #ffffff);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6e6e6', endColorstr='#ffffff', GradientType=0);
+  padding: 0 8px;
+  border-color: #a6a6a6;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] label[for="flexibleDatesStandard"] {
+  vertical-align: top;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry .remove-promo {
+  display: none;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry .add-promo,
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry .remove-promo {
+  text-decoration: underline;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry .add-promo {
+  display: inline-block;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry[data-allowEntry="1"] input {
+  display: block;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry[data-allowEntry="1"] .remove-promo {
+  display: inline-block;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry[data-allowEntry="1"] .add-promo {
+  display: none;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .flexibleDatesCheckbox {
+  width: 10px;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .fa-calendar {
+  color: #747474;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  pointer-events: none;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] ::-webkit-input-placeholder {
+  color: #4a4a4a;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] ::-moz-placeholder {
+  color: #4a4a4a;
+  opacity: 1;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] :-moz-placeholder {
+  color: #4a4a4a;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] :-ms-input-placeholder {
+  color: #4a4a4a;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry a {
+  font-size: 11px;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry .tooltip {
+  opacity: 1;
+  display: inline;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry .tooltip .fa-question-circle {
+  vertical-align: bottom;
+  position: relative;
+  top: 2px;
+  left: 2px;
+  display: inline;
+  font-size: 17px;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry .tooltip .hint {
+  display: none;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .booking-promo-code-entry .tooltip:hover .hint {
+  min-width: 100px;
+  padding: 10px;
+  display: block;
+  color: #000;
+  font-size: 11px;
+  position: absolute;
+  left: 20px;
+  top: -5px;
+  text-align: left;
+  font-weight: normal;
+  border: 1px solid;
+  border-color: #ccc #000 #000 #ccc;
+  background-color: #fff;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] a.booker-button {
+  min-width: 75px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: 6px 0;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.5;
+  border: 1px solid;
+  border-color: #cec3b8;
+  background: #aa9886;
+  background: -webkit-gradient(linear, left top, left bottom, from(#aa9886), to(#837362));
+  background: linear-gradient(to bottom, #aa9886, #837362);
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] a.booker-button span {
+  color: #fff;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .best-rate-guarantee {
+  font-weight: bold;
+  text-align: center;
+  clear: both;
+  margin-bottom: 0;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .best-rate-guarantee a {
+  text-decoration: none !important;
+  text-transform: uppercase;
+  font-family: Verdana, serif;
+  font-size: 9px;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .best-rate-guarantee span {
+  font-size: 15px;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .people-wrapper {
+  margin-bottom: 4px;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .people-wrapper[data-room="1"] {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+.CETBookingSearch [data-theme='layouts/standardBooker'] .right-arrow {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #fff;
+  position: absolute;
+  margin-right: 14px;
+}
+/*UI DatePicker CSS*/
+#ui-datepicker-div {
+  float: left;
+  width: auto !important;
+  display: none;
+  z-index: 30 !important;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+.ui-datepicker-header {
+  padding: 15px;
+}
+.ui-datepicker-next span,
+.ui-datepicker-prev span {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+}
+.ui-datepicker {
+  position: relative;
+  font-size: 12px;
+  text-align: center;
+  margin: 7px 0 0 -10px;
+}
+.ui-datepicker span.ui-icon {
+  cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-calendar {
+  margin: 0 auto;
+}
+.ui-datepicker .ui-datepicker-calendar thead {
+  border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-calendar th {
+  text-align: center;
+  color: #82888a;
+  line-height: 1.4em;
+}
+.ui-datepicker .ui-datepicker-calendar td .ui-state-default {
+  text-decoration: none;
+  display: block;
+  width: 32px;
+  line-height: 32px;
+}
+.ui-datepicker .ui-datepicker-calendar td .ui-state-default:hover {
+  text-decoration: none;
+}
+.ui-datepicker-group {
+  position: relative;
+  float: left;
+  font-size: 11px;
+}
+.ui-datepicker-group-first {
+  float: left;
+  margin-right: 11px;
+}
+.ui-datepicker-group-last {
+  margin-left: 11px;
+}
+.ui-datepicker-prev {
+  float: left;
+}
+.ui-datepicker-next {
+  float: right;
+}
+.ui-datepicker-title {
+  font-weight: bold;
+}
+.ui-datepicker-calendar {
+  text-align: center !important;
+  padding: 2px;
+}
+.ui-datepicker .ui-state-disabled {
+  cursor: default !important;
+}
+#ui-datepicker-div {
+  background-color: white;
+  color: #000;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
+}
+.ui-datepicker span.ui-icon {
+  color: #565a5c;
+}
+.ui-datepicker-calendar {
+  border-collapse: collapse;
+  border: 0;
+}
+.ui-datepicker-calendar td {
+  border: solid #dce0e0;
+  border-width: 1px 0 0 1px;
+}
+.ui-datepicker-calendar td .ui-state-default {
+  color: #565a5c;
+}
+.ui-datepicker-calendar td .ui-state-active {
+  background-color: #141414;
+  color: #f8f2ea;
+}
+.ui-datepicker-calendar td .ui-state-default:hover,
+.ui-datepicker-calendar td .ui-state-hover {
+  background-color: #9c8f81;
+  color: #f8f2ea;
+}
+.ui-datepicker-calendar td.ui-state-disabled .ui-state-default {
+  background-color: #e8e8e8;
+  color: #999;
+}
+.ui-datepicker-trigger {
+  border: none;
+  background: none;
+}
+
+  </style>
+
+
+
+</head>
+<body>
+  
+    <div class="CETBookingSearch section">
+        <!--start .search-->
+        <div data-theme="layouts/standardBooker">
+          <div class="booker-header"> Book a Room </div>
+          <div class="select-wrapper"> <select title="Select which property you would like to stay at"
+              data-bookable-targets="">
+              <option data-type="MARKET" data-marketcode="lvm" data-propcode=""> Las Vegas </option>
+              <option data-type="PROPERTY" data-marketcode="" data-propcode="ath"> - Anthology Suites </option>
+              <option selected="" data-type="PROPERTY" data-marketcode="lvm" data-propcode="clv"> - Caesars Palace </option>
+              <option data-type="PROPERTY" data-marketcode="lvm" data-propcode="dlv"> - The Cromwell </option>
+              <option data-type="PROPERTY" data-marketcode="lvm" data-propcode="ilv"> - The LINQ Hotel &amp; Casino </option>
+              <option data-type="PROPERTY" data-marketcode="lvm" data-propcode="phv"> - Planet Hollywood </option>
+              <option data-type="PROPERTY" data-marketcode="lvm" data-propcode="blv"> - Bally's Las Vegas </option>
+              <option data-type="PROPERTY" data-marketcode="lvm" data-propcode="rlv"> - Rio All-Suite Hotel &amp; Casino
+              </option>
+              <option data-type="PROPERTY" data-marketcode="lvm" data-propcode="plv"> - Paris Las Vegas </option>
+              <option data-type="PROPERTY" data-marketcode="lvm" data-propcode="las"> - Harrah's Las Vegas </option>
+              <option data-type="PROPERTY" data-marketcode="lvm" data-propcode="cl1"> - NOBU Hotel </option>
+              <option data-type="PROPERTY" data-marketcode="lvm" data-propcode="flv"> - Flamingo Las Vegas </option>
+              <option data-type="MARKET" data-marketcode="acm" data-propcode=""> Atlantic City </option>
+              <option data-type="PROPERTY" data-marketcode="acm" data-propcode="cac"> - Caesars Atlantic City </option>
+              <option data-type="PROPERTY" data-marketcode="acm" data-propcode="atl"> - Harrah's Resort Atlantic City
+              </option>
+              <option data-type="PROPERTY" data-marketcode="acm" data-propcode="bac"> - Bally's Atlantic City </option>
+              <option data-type="MARKET" data-marketcode="bam" data-propcode=""> Baltimore </option>
+              <option data-type="PROPERTY" data-marketcode="bam" data-propcode="uba"> - Horseshoe Baltimore </option>
+              <option data-type="MARKET" data-marketcode="bos" data-propcode=""> Bossier City </option>
+              <option data-type="PROPERTY" data-marketcode="bos" data-propcode="ubc"> - Horseshoe Bossier City </option>
+              <option data-type="PROPERTY" data-marketcode="bos" data-propcode="lad"> - Harrah's Louisiana Downs </option>
+              <option data-type="MARKET" data-marketcode="iam" data-propcode=""> Council Bluffs </option>
+              <option data-type="PROPERTY" data-marketcode="iam" data-propcode="hbr"> - Horseshoe Council Bluffs </option>
+              <option data-type="PROPERTY" data-marketcode="iam" data-propcode="cou"> - Harrah's Council Bluffs </option>
+              <option data-type="MARKET" data-marketcode="gcm" data-propcode=""> Gulf Coast </option>
+              <option data-type="PROPERTY" data-marketcode="gcm" data-propcode="nor"> - Harrah’s New Orleans </option>
+              <option data-type="PROPERTY" data-marketcode="gcm" data-propcode="gbi"> - Harrah's Gulf Coast </option>
+              <option data-type="MARKET" data-marketcode="ohm" data-propcode=""> Ohio </option>
+              <option data-type="PROPERTY" data-marketcode="ohm" data-propcode="ucl"> - Horseshoe Cleveland </option>
+              <option data-type="PROPERTY" data-marketcode="ohm" data-propcode="uci"> - Horseshoe Cincinnati </option>
+              <option data-type="MARKET" data-marketcode="rno" data-propcode=""> Lake Tahoe </option>
+              <option data-type="PROPERTY" data-marketcode="rno" data-propcode="tah"> - Harrah's Lake Tahoe </option>
+              <option data-type="PROPERTY" data-marketcode="rno" data-propcode="hlt"> - Harveys Lake Tahoe </option>
+              <option data-type="PROPERTY" data-marketcode="rno" data-propcode="ren"> - Harrah's Reno </option>
+              <option data-type="MARKET" data-marketcode="nmm" data-propcode=""> Tunica </option>
+              <option data-type="PROPERTY" data-marketcode="nmm" data-propcode="stu"> - Tunica Roadhouse </option>
+              <option data-type="PROPERTY" data-marketcode="nmm" data-propcode="utu"> - Horseshoe Tunica </option>
+              <option data-type="MARKET" data-marketcode="oth" data-propcode=""> Other </option>
+              <option data-type="PROPERTY" data-marketcode="oth" data-propcode="rin"> - Harrah's Resort Southern California
+              </option>
+              <option data-type="PROPERTY" data-marketcode="oth" data-propcode="wcl"> - Caesars Windsor </option>
+              <option data-type="PROPERTY" data-marketcode="oth" data-propcode="che"> - Harrah's Cherokee Casino Resort
+              </option>
+              <option data-type="PROPERTY" data-marketcode="oth" data-propcode="uel"> - Horseshoe Southern Indiana </option>
+              <option data-type="PROPERTY" data-marketcode="oth" data-propcode="jol"> - Harrah's Joliet </option>
+              <option data-type="PROPERTY" data-marketcode="oth" data-propcode="nkc"> - Harrah's North Kansas City </option>
+              <option data-type="PROPERTY" data-marketcode="oth" data-propcode="cvr"> - Harrah's Cherokee Valley River Casino
+                &amp; Hotel </option>
+              <option data-type="PROPERTY" data-marketcode="oth" data-propcode="lau"> - Harrah's Laughlin </option>
+              <option data-type="PROPERTY" data-marketcode="oth" data-propcode="met"> - Harrah's Metropolis </option>
+              <option data-type="PROPERTY" data-marketcode="oth" data-propcode="akc"> - Harrah's Ak-Chin </option>
+            </select>
+            <span class="select-content" data-bookable-content="">Caesars Palace</span><i
+              class="fa fa-caret-down cet-icon"></i>
+          </div>
+          <div class="input-wrapper"> <input type="checkbox" name="flexibledates" class="flexibledates" id="flexibledates"
+              title="Check this box if your dates are flexible and then a monthly drop down will appear."> <label
+              for="flexibledates">My Dates Are Flexible</label>
+          </div>
+          <div class="input-wrapper month-dropdown-wrapper" data-displayed="false"> <label for="months">Month</label>
+            <div class="select-wrapper"> <select id="months" title="Select the month you would like to book a room"
+                data-month-list="">
+                <option data-datevalue="07/28/2016">Jul-2016</option>
+                <option data-datevalue="08/01/2016">Aug-2016</option>
+                <option data-datevalue="09/01/2016">Sep-2016</option>
+                <option data-datevalue="10/01/2016">Oct-2016</option>
+                <option data-datevalue="11/01/2016">Nov-2016</option>
+                <option data-datevalue="12/01/2016">Dec-2016</option>
+                <option data-datevalue="01/01/2017">Jan-2017</option>
+                <option data-datevalue="02/01/2017">Feb-2017</option>
+                <option data-datevalue="03/01/2017">Mar-2017</option>
+                <option data-datevalue="04/01/2017">Apr-2017</option>
+                <option data-datevalue="05/01/2017">May-2017</option>
+                <option data-datevalue="06/01/2017">Jun-2017</option>
+              </select>
+              <span class="select-content" data-month-content="">Jul-2016</span> <i class="fa fa-caret-down cet-icon"></i>
+            </div>
+          </div>
+      
+          <div class="date-inputs">
+            <div class="input-wrapper"> <input type="text" placeholder="Check In" name="checkin"
+                title="Select a Check In Date or enter in the date in the format MM/DD/YYYY" data-check-in>
+              <div class="fa fa-calendar cet-pos-r"></div>
+            </div>
+            <div class="input-wrapper"> <input type="text" placeholder="Check Out" name="checkout"
+                title="Select a Check Out Date or enter in the date in the format MM/DD/YYYY" data-check-out>
+              <div class="fa fa-calendar cet-pos-r"></div>
+            </div>
+          </div>
+      
+          <div class="people-wrapper room-parameters" data-room="1" data-displayed="true">
+            <p>Room 1 (4 guests max per room)</p>
+            <div class="CETColumns">
+              <div class="cet-col-6 first">
+                <div class="select-wrapper"> <select name="numadults"
+                    title="Select how many adults will be staying in this room" data-adults-list="">
+                    <option value="1">1 Adult</option>
+                    <option value="2" selected="">2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults</option>
+                  </select> <span class="select-content" data-adults-content="">2 Adults</span> <i
+                    class="fa fa-caret-down cet-icon"></i> </div>
+              </div>
+              <div class="cet-col-6">
+                <div class="select-wrapper"> <select name="numkids" title="Select how many kids will be staying in this room"
+                    data-kids-list="">
+                    <option value="0" selected="">0 Children</option>
+                    <option value="1">1 Child</option>
+                    <option value="2">2 Children</option>
+                    <option value="3">3 Children</option>
+                  </select> <span class="select-content" data-kids-content="">0 Children</span> <i
+                    class="fa fa-caret-down cet-icon"></i> </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="booking-promo-code-entry">
+            <p><a href="#" class="promoCodeLink"><span class="add-promo" data-action="allowPromoCode">Add Promo or Package
+                  Code:</span><span class="remove-promo" data-action="removePromoCode">Remove Promo or Package
+                  Code:</span></a><span class="tooltip"> <span class="fa fa-question-circle"></span> <span class="hint"> If
+                  you have Promo or Package code, click to enter it here to receive your discount. </span> </span>
+            </p> <input type="text" class="promocode" placeholder="Enter Promo/Package Code" title="Enter Promo/Package Code"
+              value="">
+          </div>
+          <p><a href="https://www.caesars.com/deals/military-discounts?icml=CET_CLV_IDME_MINIBOOKER_BOOKER0" target="_parent">
+              Additional Discounts to Military, First Responders, Students, &amp; Teachers</a> </p> <a href="#"
+            class="cet-button booker-button" title="Submit button to check best rates for your selections"
+            data-action="booking-search"><span>Check Best Rates</span><span class="right-arrow cet-pos-r"></span></a>
+          <p><a href="https://www.totalrewards.com/hotel-reservations/main/?&view=reservationsearch" target="_blank"
+              class="reservations">Existing Reservation</a></p>
+          <p class="best-rate-guarantee"> <span class="fa fa-check-circle-o"></span><a
+              href="https://www.caesars.com/best-rate-guarantee.html" target="_parent"> Best Rate Guarantee</a> </p>
+          <!-- end standard booker -->
+        </div>
+        <!--end booking search-->
+      </div>
+<script>
+
+(function($, window, document, undefined) {
+  "use strict";
+
+  var pluginName = "CETBooker",
+    defaults = {
+      scrollFromTop: 100
+    };
+
+  function CETBooker(element, options) {
+    this.element = element;
+
+    this.settings = $.extend({}, defaults, options);
+    this._defaults = defaults;
+    this._name = pluginName;
+    this.init();
+  }
+
+  $.extend(CETBooker.prototype, {
+    init: function() {
+      this.datePickerInit();
+      this.setSelectedProperty();
+      this.flexibleDates();
+      this.promoCodes();
+      this.selectChange();
+      this.searchRooms();
+    },
+    selectChange: function() {
+      $(".select-wrapper select").on("change", function(e) {
+        var selectedOptionText = $(e.currentTarget)
+          .find("option:selected")
+          .text();
+        if (selectedOptionText)
+          selectedOptionText = selectedOptionText.replace("- ", " ");
+        $(e.currentTarget)
+          .closest(".select-wrapper")
+          .find(".select-content")
+          .text(selectedOptionText);
+      });
+    },
+    flexibleDates: function() {
+      $("[name='flexibledates']").on("change", function(e) {
+        $(".date-inputs").attr("data-displayed", !e.currentTarget.checked);
+        $(".month-dropdown-wrapper").attr(
+          "data-displayed",
+          e.currentTarget.checked
+        );
+        e.currentTarget.blur();
+      });
+    },
+    promoCodes: function() {
+      $("[data-action='allowPromoCode']").on("click", function() {
+        $(".booking-promo-code-entry")
+          .attr("data-allowEntry", "1")
+          .find("input")
+          .focus();
+        return false;
+      });
+
+      $("[data-action='removePromoCode']").on("click", function() {
+        $(".booking-promo-code-entry")
+          .attr("data-allowEntry", "0")
+          .find("input")
+          .val("");
+        return false;
+      });
+    },
+    searchRooms: function() {
+      var $this = this;
+      $('[data-action="booking-search"]').on("click", function() {
+        $this.executeSearch();
+      });
+    },
+
+    datePickerInit: function() {
+      var checkIn = $("input[data-check-in]");
+      var checkOut = $("input[data-check-out]");
+
+      $.datepicker.setDefaults({
+        numberOfMonths: 1,
+        gotoCurrent: true,
+        hideIfNoPrevNext: true,
+        minDate: new Date(),
+        calendarDays: ["S", "M", "T", "W", "T", "F", "S"],
+        dateFormat: "mm/dd/yy",
+        nextText: '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+        prevText: '<i class="fa fa-chevron-left" aria-hidden="true"></i>'
+      });
+
+      checkIn.datepicker({
+        onSelect: function(dateText) {
+          if (checkIn.val() !== "") {
+            var newDatePlusOne = new Date(dateText);
+            var maxDate1 = new Date(newDatePlusOne);
+            maxDate1.setDate(newDatePlusOne.getDate() + 11);
+            newDatePlusOne.setDate(newDatePlusOne.getDate() + 1);
+
+            if (Date.parse(checkOut.val() || 0) <= Date.parse(checkIn.val())) {
+              checkOut.val($.datepicker.formatDate("mm/dd/yy", newDatePlusOne));
+            } else if (Date.parse(checkOut.val()) > maxDate1) {
+              checkOut.val($.datepicker.formatDate("mm/dd/yy", maxDate1));
+            }
+
+            checkOut.datepicker("destroy");
+            checkOut.datepicker({
+              minDate: newDatePlusOne,
+              maxDate: maxDate1
+            });
+          }
+        }
+      });
+      checkOut.datepicker({
+        minDate: +1
+      });
+    },
+    setSelectedProperty: function() {
+      var propertyList = $("select[data-bookable-targets]").val() || "";
+      propertyList = propertyList.replace("- ", "");
+      $("span[data-bookable-content]").text(propertyList);
+    },
+    executeSearch: function() {
+      var parameters = {};
+      var selectedProperty = $("select[data-bookable-targets]").find(
+        "option:selected"
+      );
+      var propCode = selectedProperty.attr("data-propcode");
+      var marketCode = selectedProperty.attr("data-marketcode");
+
+      if (propCode) parameters.propCode = propCode;
+      if (marketCode) parameters.regioncode = marketCode;
+
+      if (document.getElementsByClassName("flexibledates")[0].checked) {
+        parameters.view = parameters.propCode ? "ratecal" : "marketcal";
+        parameters.arrival = $("select[data-month-list]").val();
+      } else {
+        parameters.arrival = $("input[data-check-in]").val();
+        parameters.departure = $("input[data-check-out]").val();
+      }
+
+      var roomData = [];
+      var adults = parseInt($("select[data-adults-list]").val());
+      var children = parseInt($("select[data-kids-list]").val());
+
+      roomData.push({
+        Adults: adults,
+        Children: children
+      });
+
+      parameters.roomDetails = JSON.stringify(roomData);
+
+      var tripCode = $(".promocode").val();
+      if (tripCode && tripCode.length) parameters.tripcode = tripCode;
+
+      var url = "https://www.totalrewards.com/reserve?" + $.param(parameters);
+      window.top.location.replace(url);
+    }
+  });
+
+  $.fn[pluginName] = function(options) {
+    return this.each(function() {
+      if (!$.data(this, "plugin_" + pluginName)) {
+        $.data(this, "plugin_" + pluginName, new CETBooker(this, options));
+      }
+    });
+  };
+
+  $(".CETBookingSearch").CETBooker();
+})(jQuery, window, document);
+
+</script>
+</body>
+</html>

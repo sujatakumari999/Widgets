@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  html,
+body {
+	height: 100%;
+	background: #fff;
+}
+.drops-wrap {
+	width: 300px;
+	min-height: 50px;
+	background: transparent;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 5px 5px 10px #ddd;
+	border-radius: 5px;
+}
+.drop {
+	width: 100%;
+	background: #d3dcff;
+	position: relative;
+	cursor: pointer;
+	border: 2px solid #91a6ff;
+	border-bottom: 0;
+	color: #627ae0;
+}
+.drops-wrap .drop:first-child {
+	border-radius: 5px 5px 0 0;
+}
+.drops-wrap .drop:last-child {
+	border-bottom: 2px solid #91a6ff;
+	border-radius: 0 0 5px 5px;
+}
+
+.drop h5:hover::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(145, 166, 255, 0.2);
+}
+/* .drop h5::before {
+	content: '';
+	width: 0;
+	height: 2px;
+	background: #627ae0 !important;
+	background: linear-gradient(to right, #91a6ff 0%,#324594 50%,#91a6ff 100%) !important;
+	transition: 0.3s;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.drop h5:hover::before {
+	width: 100%;
+} */
+
+.drop > h5 {
+	margin: 0;
+	position: relative;
+	padding: 15px;
+}
+.drop > h5::after {
+	font-family: "Font Awesome 5 Free";
+	content: "\f054";
+	font-weight: 800;
+	font-size: 15px;
+	pointer-events: none;
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+}
+.drop-active > h5::after {
+	transform: rotate(90deg);
+}
+.drop-content::before {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 100%;
+	background: #91a6ff;
+	position: relative;
+	top: -17px;
+}
+.drop > .drop-content {
+	display: none;
+	padding: 15px;
+}
+
+.drops-wrap > .drop > .drop-content > .drop {
+	background: #e3e8ff;
+}
+.drops-wrap > .drop > .drop-content > .drop > .drop-content > .drop {
+	background: #f0f3ff;
+}
+
+
+
+
+
+/* -------------marqUp------------ */
+
+.marqueeUP {
+        height: 300px;
+        
+        overflow: hidden;
+        position: relative;
+        background: #fefefe;
+        color: #333;
+        border: 1px solid #4a4a4a;
+    }
+    
+    .marqueeUP p {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        
+        text-align: center;
+        -moz-transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        
+        transform: translateY(100%);
+        -moz-animation: scroll-up 2s linear infinite;
+        -webkit-animation: scroll-up 2s linear infinite;
+        animation: scroll-up 20s linear infinite;
+    }
+    
+    @-moz-keyframes scroll-up {
+        0% {
+            -moz-transform: translateY(100%);
+        }
+        100% {
+            -moz-transform: translateY(-100%);
+        }
+    }
+    
+    @-webkit-keyframes scroll-up {
+        0% {
+            -webkit-transform: translateY(100%);
+        }
+        100% {
+            -webkit-transform: translateY(-100%);
+        }
+    }
+    
+    @keyframes scroll-up {
+        0% {
+            -moz-transform: translateY(100%);
+            -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+        }
+        100% {
+            -moz-transform: translateY(-100%);
+            -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+        }
+    }
+
+    .tabSubHead {
+text-align: center;
+color:skyblue;
+
+    }
+  </style>
+  
+</head>
+<body>
+  
+    <div class="drops-wrap">
+        <div class="drop">
+            <h5 class="drop-header">Something 1</h5>
+            <div class="drop-content marqueeUP">
+                <h5 class="tabSubHead">There are many variations of passages of Lorem Ipsum available.</h5>
+                <p>Your upward scrolling text <a href="#" style="color: red">NEW</a></p>
+                
+            </div>
+        </div>
+        <!-- <div class="drop">
+            <h5 class="drop-header">Something 2</h5>
+            <div class="drop-content marqueeUP">
+                <h5 class="tabSubHead">There are many variations of passages of Lorem Ipsum available.</h5>
+                <p>Your upward scrolling text <a href="#" style="color: red">NEW</a></p>
+            </div>
+        </div>
+        <div class="drop">
+            <h5 class="drop-header">Something 3</h5>
+            <div class="drop-content marqueeUP">
+                <h5 class="tabSubHead">There are many variations of passages of Lorem Ipsum available.</h5>
+                <p>Your upward scrolling text <a href="#" style="color: red">NEW</a></p>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        $(".drop-header").on("click", function() {
+          var drop = $(this).closest(".drop");
+          if (!drop.hasClass("drop-active")) {
+              drop.addClass("drop-active");
+              drop.find("> .drop-content").slideDown();
+              drop.siblings(".drop").removeClass("drop-active");
+              drop
+                  .siblings(".drop")
+                  .find(".drop")
+                  .removeClass("drop-active");
+              drop
+                  .siblings(".drop")
+                  .find(".drop")
+                  .find(".drop-content")
+                  .slideUp();
+              drop
+                  .siblings(".drop")
+                  .find(".drop-content")
+                  .slideUp();
+          } else {
+              drop.removeClass("drop-active");
+              drop.find(".drop-content").slideUp();
+              drop.find(".drop").removeClass("drop-active");
+          }
+      });
+      
+        </script>
+</body>
+</html>

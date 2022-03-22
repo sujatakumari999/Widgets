@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+
+
+
+.buttonHov .spanHov, .buttonHov .spanHov[aria-hidden='true']:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.buttonHov {
+  --hue: 76;
+  --sat: 100%;
+  --lum: 32%;
+  display: block;
+  border: none;
+  margin: 1em auto;
+  padding: 0;
+  position: relative;
+  width: 163px;
+  width: 177px;
+    height: 57px;
+    background: none;
+    font: 28px/59px pro;
+  filter: contrast(0.5);
+  transition: .3s;
+  cursor: pointer;
+}
+.buttonHov:focus, .buttonHov:hover {
+  outline: none;
+  filter: none;
+}
+.buttonHov:active {
+  transform: translateY(0.25rem);
+}
+.buttonHov:active [aria-hidden='true'] {
+  transform: translateY(var(--ty, 0.25rem));
+}
+.buttonHov:active [aria-hidden='true']:nth-child(2) {
+  --ty: .75rem ;
+}
+.buttonHov .spanHov[aria-hidden='true'] {
+  filter: drop-shadow(0.125rem 0.1875rem hsl(var(--hue), calc(var(--sat) - 25%), 25%)) drop-shadow(-0.1875rem -0.125rem hsl(var(--hue), calc(var(--sat) - 41%), calc(var(--lum) + 31%))) drop-shadow(1.5rem 1.5rem 1.5rem rgba(0, 0, 0, 0.75));
+}
+.buttonHov .spanHov[aria-hidden='true']:after {
+  background: hsl(var(--hue), var(--sat), var(--lum));
+  clip-path: polygon(100% 0, 91% 91%, 13% 100%, 0 35%);
+  content: "";
+}
+.buttonHov .spanHov[aria-hidden='true']:nth-child(2) {
+  --sat: 0%;
+  --lum: 83%;
+}
+.buttonHov .spanHov[aria-hidden='true']:nth-child(2):after {
+  clip-path: polygon(3% 21%, 85% 25%, 75% 93%, 14% 87%);
+}
+.buttonHov .spanHov:last-child {
+  background: radial-gradient(black, white 83%) 50% 0.125em/0.5em 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(2px 2px #313131);
+}
+
+
+</style>
+
+</head>
+<body>
+  
+<button class="buttonHov"><span class="spanHov" aria-hidden="true"></span><span class="spanHov" aria-hidden="true"></span><span class="spanHov">button</span></button>
+<!-- <button><span aria-hidden="true"></span><span aria-hidden="true"></span><span>click me!</span></button> -->
+
+
+</body>
+</html>

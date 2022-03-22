@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+  body {
+  background-color: #ddd;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+.badge {
+  background-color: #777;
+}
+
+.tabs-left {
+  margin-top: 3rem;
+}
+
+.nav-tabs {
+  float: left;
+  border-bottom: 0;
+}
+.nav-tabs li {
+  float: none;
+  margin: 0;
+}
+.nav-tabs li a {
+  margin-right: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: ##a7a2a2;
+}
+.nav-tabs li a {
+ color: #444;
+}
+.nav-tabs .glyphicon {
+  color: #fff;
+}
+.nav-tabs .active .glyphicon {
+  color: #333;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: 0;
+}
+
+.tab-content {
+  margin-left: 45px;
+}
+.tab-content .tab-pane {
+  display: none;
+  background-color: #fff;
+  padding: 1.6rem;
+  overflow-y: auto;
+}
+.tab-content .active {
+  display: block;
+}
+
+.list-group {
+  width: 100%;
+}
+.list-group .list-group-item {
+  height: 50px;
+}
+.list-group .list-group-item h4, .list-group .list-group-item span {
+  line-height: 11px;
+}
+
+.UIPanel {
+    background-color: #417cd2;
+    padding: 3px 17px;
+    color: #fff;
+
+}
+
+ul li {
+    color: #000;
+}
+
+ul {
+    list-style-type:none;
+    box-shadow: 2px 2px 2px 2px #888;
+}
+  </style>
+  <script>
+  var tabsFn = (function() {
+	function init() {
+		setHeight();
+	}
+
+	function setHeight() {
+		var $tabPane = $(".tab-pane"),
+			tabsHeight = $(".nav-tabs").height();
+
+		$tabPane.css({
+			height: tabsHeight
+		});
+	}
+
+	$(init);
+})();
+
+  </script>
+</head>
+<body>
+  
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="tabs-left ">
+                <div class="nav nav-tabs col-sm-6">
+                    <div class="UIPanel">
+                            <h4>Panel 1 </div>
+                            <div style="background-color:13px;">
+                                    <ul >
+                                            <li ><a href="#a" data-toggle="tab"><span >abc</span></a></li>
+                                            <li><a href="#b" data-toggle="tab"><span >abc</span></a></li>
+                                            <li><a href="#c" data-toggle="tab"><span >abc</span></a></li>
+                                            <li><a href="#d" data-toggle="tab"><span >abc</span></a></li>
+                                            <li><a href="#e" data-toggle="tab"><span >abc</span></a></li>
+                                            <li><a href="#f" data-toggle="tab"><span >abc</span></a></li>
+                                        </ul>
+                            </div>
+                            <div class="UIPanel">
+                                    <h4>Panel 2 </div>
+                                    <div style="background-color:13px;">
+                                            <ul >
+                                                    <li><a href="#g" data-toggle="tab"><span >abc</span></a></li>
+                                                    <li><a href="#h" data-toggle="tab"><span >abc</span></a></li>
+                                                    <li><a href="#i" data-toggle="tab"><span >abc</span></a></li>
+                                                    <li><a href="#j" data-toggle="tab"><span >abc</span></a></li>
+                                                    <li><a href="#k" data-toggle="tab"><span >abc</span></a></li>
+                                                    <li><a href="#l" data-toggle="tab"><span >abc</span></a></li>
+                                                </ul>
+                                    </div>
+                                    <div class="UIPanel">
+                                            <h4>Panel 3 </div>
+                                            <div style="background-color:13px;">
+                                                    <ul >
+                                                            <li ><a href="#m" data-toggle="tab"><span>abc</span></a></li>
+                                                            <li><a href="#n" data-toggle="tab"><span >abc</span></a></li>
+                                                            <li><a href="#o" data-toggle="tab"><span >abc</span></a></li>
+                                                            <li><a href="#p" data-toggle="tab"><span ></span></a></li>
+                                                            <li><a href="#q" data-toggle="tab"><span >abc</span></a></li>
+                                                            <li><a href="#r" data-toggle="tab"><span >abc</span></a></li>
+                                                        </ul>
+                                            </div>
+
+			</div>
+                            </div>
+                   
+
+
+                           
+    
+    
+                                
+        
+        
+                                  
+
+				<div class="tab-content ">
+					<div class="tab-pane active" id="a">
+						<h3>What do you do?</h3>
+						<p>abc............</p>
+					</div>
+					<div class="tab-pane" id="b">
+						<h3>What's your Favorite?</h3>
+						<p>123............</p>
+					</div>
+					<div class="tab-pane" id="c">CCCCThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+					<div class="tab-pane" id="d">DDDDDSecondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.</div>
+					<div class="tab-pane" id="e">123, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+					<div class="tab-pane" id="f">dfearg, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="g">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="h">123, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="i">565dh, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="j">ghjyuj, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="k">grtdh, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="l">egths, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="m">ergrsg, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="n">rgrdth, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="o">,liukugyyt, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="p">frfgrfr, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="q">fgerdge, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    <div class="tab-pane" id="r">fgdfgaer, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                </div>
+				<!-- /tab-content -->
+			</div>
+			<!-- /tabbable -->
+		</div>
+		<!-- /col -->
+	</div>
+	<!-- /row -->
+</div>
+<!-- /container -->
+
+</body>
+</html>

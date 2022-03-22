@@ -1,0 +1,267 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Bus Booking</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link
+	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css"
+	rel="stylesheet" />
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="css/hover.css">
+<link rel="stylesheet" href="css/busbook.css">
+<link rel="stylesheet" href="css/busUI.css">
+
+
+<style>
+body {
+	background-image: url(../images/bus.jpg);
+	font-size: 14px !important;
+}
+
+.headBorder {
+	border: 2px solid #555;
+	box-shadow: 6px 3px 7px 1px;
+}
+
+.panelCustom {
+	margin-top: 11%;
+	width: 96%;
+	margin-left: 26px;
+}
+</style>
+
+<script>
+	$(document).ready(function() {
+		$("#Doj").datepicker({
+			changeYear: false,
+		    changeMonth: false,
+			format : 'd-M-yyyy',
+			numberOfMonths : 2,
+			minDate:0,
+			onSelect : function(selected) {
+				$("#DoR").datepicker("option", "minDate", selected)
+			}
+		});
+		$("#DoR").datepicker({
+			format : 'd-M-yyyy',
+			numberOfMonths : 2,
+			onSelect : function(selected) {
+				$("#Doj").datepicker("option", "maxDate", selected)
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	function getAvailableSeat() {
+		debugger;
+
+		var val = document.getElementById('startplace').value;
+		var startPlaceId = $('#placeEntitiesList').find(
+				'option[value="' + val + '"]').attr('data-value');
+
+		var val = document.getElementById('endPlace').value;
+		var endPlaceId = $('#placeEntitiesList').find(
+				'option[value="' + val + '"]').attr('data-value');
+
+		var journeyDateStr = $('#Doj').val();
+
+		var data = new FormData();
+
+		data.append('journeyDateStr', journeyDateStr);
+		data.append('startPlaceId', startPlaceId);
+		data.append('endPlaceId', endPlaceId);
+
+		$.ajax({
+			type : 'POST',
+			url : 'getAvailableServiceList',
+			async : false,
+			processData : false,
+			contentType : false,
+			data : data,
+			success : function(data) {
+				if (data != "") {
+					window.location.href = "getAvailableServiceList";
+					alert('get list success');
+				} else {
+					alert("Something Went Wrong");
+					return false
+				}
+
+			},
+			error : function(abc) {
+			},
+			failure : function(response) {
+
+			}
+		});
+
+	}
+</script>
+</head>
+
+
+<body class="w3-theme-l5">
+<%@include file="LmkMaster.jsp"%>
+
+
+<div class="panel panel-primary panelCustom">
+    <div class="panel-heading">Bus Booking</div>
+    <div class="panel-body">
+
+        <form:form action="getAvailableServiceList" method="post"
+            modelAttribute="data" onsubmit="return validateForm()">
+            <div class="container col-sm-12">
+
+                <h2>Search for Bus Availability</h2>
+                <div class="row col-sm-12">
+
+                    <div class="form-group form-check col-sm-2">
+                        <strong>Leaving from<sup class="text-danger">*</sup></strong><input
+                            id='startplace' list="placeEntitiesList" name="startPlaceId"
+                            class="form-control form-control-sm my-4"
+                            style="margin-top: unset; height: calc(2.8125rem + 2px) !important;">
+                        <datalist id=placeEntitiesList title="Select District">
+                            <option value="">Select Leaving From</option>
+                            <c:forEach var="sl" items="${placeEntitiesList}">
+                                <option data-value="${sl.placeId}" value="${sl.placeName}"></option>
+                            </c:forEach>
+                        </datalist>
+                    </div>
+
+                    <div class="form-group form-check col-sm-2">
+                        <strong>Going to<sup class="text-danger">*</sup></strong> <input
+                            id='endPlace' list="placeEntitiesList" name="endPlaceId"
+                            class="form-control form-control-sm my-4"
+                            style="margin-top: unset; height: calc(2.8125rem + 2px) !important;">
+                        <datalist id=placeEntitiesList title="Select District">
+                            <option value="">Select Arrived From</option>
+                            <c:forEach var="sl" items="${placeEntitiesList}">
+                                <option data-value="${sl.placeId}" value="${sl.placeName}"></option>
+                            </c:forEach>
+                        </datalist>
+                    </div>
+
+                    <div class="form-group form-check col-sm-2">
+                        <label for="Doj">Date of Journey</label> <input type="text"
+                            value="" name="journeyDateStr" maxlength="20"
+                            class="form-control form-control-sm my-4"
+                            style="margin-top: unset; height: calc(2.8125rem + 2px) !important;"
+                            data-date-end-date="0d" id="Doj" readonly="readonly">
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <label for="DoD">Date of Return</label> <input type="text"
+                            value="" name="retjourneyDateStr" maxlength="20"
+                            class="form-control form-control-sm my-4"
+                            style="margin-top: unset; height: calc(2.8125rem + 2px) !important;"
+                            data-date-end-date="0d" id="DoR" readonly="readonly">
+
+                    </div>
+                    <div class="form-group col-sm-2" style="padding-top: 40px;">
+
+                        <button type="submit"
+                            class="btn btn-primary btn-xs btnrdd button">Submit</button>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+        </form:form>
+
+
+    </div>
+</div>
+
+
+<%@include file="footer.jsp"%>
+
+<script type="text/javascript">
+    function validateForm() {
+
+        var startplace = document.getElementById("startplace").value;
+        var endPlace = document.getElementById("endPlace").value;
+        var Doj = document.getElementById("Doj").value;
+
+        if (startplace == "") {
+            alert("Please select Leaving from");
+            return false;
+        } else if (endPlace == "") {
+            alert("Please select Going to");
+            return false;
+        } else if (Doj == "") {
+            alert("Please select Date of Journey");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function validateDate() {
+        debugger;
+        var flag = "Yes";
+        var Message = "";
+        var resultArray = new Array();
+
+        var Doj = document.getElementById("Doj").value;
+        var DoR = document.getElementById("DoR").value;
+        var res1 = Doj.substring(7, 11);
+        var res2 = DoR.substring(7, 11);
+
+        var ress1 = Doj.substring(3, 6);
+        var ress2 = DoR.substring(3, 6);
+
+        var resss1 = Doj.substring(0, 2);
+        var resss2 = DoR.substring(0, 2);
+
+        var newstr = res2 - res1;
+
+        var newstrr = ress2 - ress1;
+
+        var newstrrr = resss2 - resss1;
+        if (newstr == "0") {
+            if (newstrr == "0") {
+                if (newstrrr == "0") {
+
+                } else if (newstrrr < "0") {
+                    alert("Please pick a valid Return Ticket Date");
+                    return false;
+                }
+            } else if (newstrr < "0") {
+                alert("Please pick a valid Return Ticket Date");
+                return false;
+            }
+
+        } else if (newstr < "0") {
+            alert("Please pick a valid Return Ticket Date");
+            return false;
+        } else {
+
+        }
+
+    }
+</script>
+
+</body>
+</html>
