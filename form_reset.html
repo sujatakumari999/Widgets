@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<script>
+		function fun(){document.getElementById('name').value='';}
+	</script>
+	<style>
+		input[type=submit] {
+			position: relative;
+			float: right;
+		}
+	</style>
+</head>
+
+<body>
+	<center>
+		
+		<form id="d" action="submit" name="geek">
+			<table cellspacing="0" cellpadding="3" border="1">
+				<tr>
+					<td align="center">Username</td>
+					<td>
+						<input type="text" id="name"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td align="center"></td>
+					<td>
+						<input onclick="fun()"
+							type="submit" value="Submit" />
+					</td>
+				</tr>
+			</table>
+		</form>
+
+	</center>
+</body>
+
+</html>

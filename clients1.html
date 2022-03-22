@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+.wrap {
+  padding: 4.8rem;
+  position:relative;
+  width: 90%;
+}
+h3 {
+  font-size:2.4rem;
+  font-weight: 600;
+  text-align:center;
+}
+.clients {
+    align-items: center;
+    -webkit-box-align: center;
+    display: grid;
+    gap: 4.8rem 4.8rem;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    margin: 4.8rem auto;
+    max-width: 1024px; }
+
+.clients li {
+  list-style: none;
+  margin: 0;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.clients img {
+  height: 3.2rem;
+
+}
+.clients:hover li {
+filter: blur(0px);
+-webkit-filter: blur(0px);
+}
+.clients:hover li:not(:hover)  {
+filter: blur(2px);
+-webkit-filter: blur(2px);
+}
+.clients li:hover {
+-webkit-transform: translateY(-0.3rem);
+transform: translateY(-0.3rem); 
+}
+
+@media (min-width: 1024px) {
+.clients {
+    grid-template-columns: auto auto auto auto; }
+    
+.clients img {
+  height: 4rem; }}
+
+/* --- Images (gray logo) --- */
+.clients img {
+  -webkit-filter: grayscale(100%) brightness(10%) contrast(10%);
+          filter: grayscale(100%) brightness(10%) contrast(10%); }
+
+.clients img:hover {
+  background: none;
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out; }
+</style>
+</head>
+<body>
+
+
+<div class="container">
+  <div class="row">
+    <div class="wrap">
+      <h3><strong>We are fortunate to work with exceptional brands</strong></h3>
+      <ul class="clients">
+        <li><a href=""><img src="https://webslides.tv/static/images/logos/google.svg" alt="1"></a></li>
+        <li><a href=""><img src="https://webslides.tv/static/images/logos/airbnb.svg" alt="2"></a></li>
+        <li><a href=""><img src="https://webslides.tv/static/images/logos/apple.svg" alt="3"></a></li>
+        <li><a href=""><img src="https://webslides.tv/static/images/logos/microsoft.svg" alt="4"></a></li>
+		 <li><a href=""><img src="https://webslides.tv/static/images/logos/google.svg" alt="5"></a></li>
+        <li><a href=""><img src="https://webslides.tv/static/images/logos/airbnb.svg" alt="6"></a></li>
+        <li><a href=""><img src="https://webslides.tv/static/images/logos/apple.svg" alt="7"></a></li>
+        <li><a href=""><img src="https://webslides.tv/static/images/logos/microsoft.svg" alt="8"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
