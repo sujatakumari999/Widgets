@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Semantic UI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+    </style>
+    </head>
+    <body>
+        <h1 class="ui center aligned yellow header">Semantic UI Grid</h1>
+
+        <div class="ui basic center aligned segment">
+          <div class="ui horizontal divider">
+            <!-- .horizontal class is mandatory here -->
+            <div class="ui big buttons custom_toggle">
+              <button class="ui inverted active blue button" id="fixed">Fixed</button>
+              <div class="or"></div>
+              <button class="ui inverted blue button" id="fluid">Fluid</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui hidden divider"></div>
+        
+        <div class="ui center aligned grid container">
+          <h2>Basic 16</h2>
+        
+          <div class="six column row">
+            <!-- .row element is not mandatory, .column is enough for grid to work -->
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+        
+          <h2>16/5 || 4x8x4</h2>
+        
+          <div class="five column row">
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="four wide column">
+              <p><span>Four</span></p>
+            </div>
+            <div class="eight wide column">
+              <p><span>Eight</span></p>
+            </div>
+            <div class="four wide column">
+              <p><span>Four</span></p>
+            </div>
+          </div>
+        
+          <h2>Relaxed 4x8x4</h2>
+        
+          <div class="relaxed row">
+            <div class="four wide column">
+              <p><span>Four</span></p>
+            </div>
+            <div class="eight wide column">
+              <p><span>Eight</span></p>
+            </div>
+            <div class="four wide column">
+              <p><span>Four</span></p>
+            </div>
+          </div>
+        
+          <h2>Floated</h2>
+        
+          <div class="five column row">
+            <div class="left floated column">
+              <p><span>Left</span></p>
+            </div>
+            <div class="right floated column">
+              <p><span>Right</span></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui center aligned equal width grid container">
+          <h2>Equal width</h2>
+        
+          <div class="equal width row">
+            <div class="column">
+              <p><span>=</span></p>
+            </div>
+            <div class="column">
+              <p><span>=</span></p>
+            </div>
+            <div class="column">
+              <p><span>=</span></p>
+            </div>
+          </div>
+          <div class="equal width row">
+            <div class="column">
+              <p><span>=</span></p>
+            </div>
+            <div class="column">
+              <p><span>=</span></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="ui hidden divider"></div>
+          <h2>Celled</h2>
+          <div class="ui hidden divider"></div>
+        </div>
+        
+        <div class="ui three column center aligned celled grid container">
+          <div class="row">
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="ui hidden divider"></div>
+          <h2>Internally Celled</h2>
+          <div class="ui hidden divider"></div>
+        </div>
+        
+        <div class="ui three column center aligned internally celled grid container">
+          <div class="row">
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="ui hidden divider"></div>
+          <h2>Divided</h2>
+          <div class="ui hidden divider"></div>
+        </div>
+        
+        <div class="ui three column center aligned divided grid container">
+          <div class="row">
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="ui hidden divider"></div>
+          <h2>Vertically Divided</h2>
+          <div class="ui hidden divider"></div>
+        </div>
+        
+        <div class="ui three column center aligned vertically divided grid container">
+          <div class="row">
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="ui hidden divider"></div>
+          <h2>Nested</h2>
+          <div class="ui hidden divider"></div>
+        </div>
+        
+        <div class="ui two column center aligned grid container">
+          <div class="column">
+            <div class="ui three column grid" id="nested_1">
+              <div class="column">
+                <p></p>
+              </div>
+              <div class="column">
+                <p></p>
+              </div>
+              <div class="column">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <p></p>
+          </div>
+          <div class="column">
+            <p></p>
+          </div>
+          <div class="column">
+            <div class="ui grid" id="nested_2">
+              <div class="four wide column">
+                <p></p>
+              </div>
+              <div class="twelve wide column">
+                <div class="ui equal width grid" id="nested_3">
+                  <div class="column">
+                    <p></p>
+                  </div>
+                  <div class="column">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui hidden divider"></div>
+        </div>
+        
+        <div class="ui hidden divider"></div>
+        
+        <div class="ui equal width center aligned grid container" id="color_vars">
+          <h2>Color variations</h2>
+        
+          <div class="row">
+            <div class="red column">
+              <p></p>
+            </div>
+            <div class="orange column">
+              <p></p>
+            </div>
+            <div class="yellow column">
+              <p></p>
+            </div>
+            <div class="olive column">
+              <p></p>
+            </div>
+            <div class="green column">
+              <p></p>
+            </div>
+            <div class="teal column">
+              <p></p>
+            </div>
+            <div class="blue column">
+              <p></p>
+            </div>
+            <div class="violet column">
+              <p></p>
+            </div>
+            <div class="purple column">
+              <p></p>
+            </div>
+            <div class="pink column">
+              <p></p>
+            </div>
+            <div class="brown column">
+              <p></p>
+            </div>
+            <div class="grey column">
+              <p></p>
+            </div>
+            <div class="black column">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="ui hidden divider"></div>
+          <h2>Stackable (mobile)</h2>
+          <div class="ui hidden divider"></div>
+        </div>
+        
+        <div class="ui stackable four column center aligned grid container">
+          <div class="row">
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+            <div class="column">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="ui hidden divider"></div>
+          <h2>Reverse order (mobile)</h2>
+          <div class="ui hidden divider"></div>
+        </div>
+        
+        <div class="ui mobile reversed four column center aligned grid container">
+          <div class="row">
+            <div class="column">
+              <p><span>1</span></p>
+            </div>
+            <div class="column">
+              <p><span>2</span></p>
+            </div>
+            <div class="column">
+              <p><span>3</span></p>
+            </div>
+            <div class="column">
+              <p><span>4</span></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="ui hidden divider"></div>
+          <h2>Doubling column width (mobile)</h2>
+          <div class="ui hidden divider"></div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="doubling eight column row" id="db_1">
+            <div class="column">
+              <p><span>1</span></p>
+            </div>
+            <div class="column">
+              <p><span>2</span></p>
+            </div>
+            <div class="column">
+              <p><span>3</span></p>
+            </div>
+            <div class="column">
+              <p><span>4</span></p>
+            </div>
+            <div class="column">
+              <p><span>5</span></p>
+            </div>
+            <div class="column">
+              <p><span>6</span></p>
+            </div>
+            <div class="column">
+              <p><span>7</span></p>
+            </div>
+            <div class="column">
+              <p><span>8</span></p>
+            </div>
+          </div>
+          <div class="doubling six column row" id="db_2">
+            <div class="column">
+              <p><span>1</span></p>
+            </div>
+            <div class="column">
+              <p><span>2</span></p>
+            </div>
+            <div class="column">
+              <p><span>3</span></p>
+            </div>
+            <div class="column">
+              <p><span>4</span></p>
+            </div>
+            <div class="column">
+              <p><span>5</span></p>
+            </div>
+            <div class="column">
+              <p><span>6</span></p>
+            </div>
+          </div>
+          <div class="doubling four column row" id="db_3">
+            <div class="column">
+              <p><span>1</span></p>
+            </div>
+            <div class="column">
+              <p><span>2</span></p>
+            </div>
+            <div class="column">
+              <p><span>3</span></p>
+            </div>
+            <div class="column">
+              <p><span>4</span></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="ui hidden divider"></div>
+          <h2>Custom visibility (mobile)</h2>
+          <div class="ui hidden divider"></div>
+        </div>
+        
+        <div class="ui center aligned grid container">
+          <div class="widescreen only row">
+            <div class="column">
+              <p><span>Widescreen</span></p>
+            </div>
+          </div>
+          <div class="large screen only row">
+            <div class="column">
+              <p><span>Large Screen</span></p>
+            </div>
+          </div>
+          <div class="computer only row">
+            <div class="column">
+              <p><span>Computer</span></p>
+            </div>
+          </div>
+          <div class="tablet computer only row">
+            <div class="column">
+              <p><span>Tablet &amp; Computer</span></p>
+            </div>
+          </div>
+          <div class="two column tablet only row">
+            <div class="column">
+              <p><span>Tablet</span></p>
+            </div>
+            <div class="column">
+              <p><span>Tablet</span></p>
+            </div>
+          </div>
+          <div class="three column mobile only row">
+            <div class="column">
+              <p><span>Mobile</span></p>
+            </div>
+            <div class="column">
+              <p><span>Mobile</span></p>
+            </div>
+            <div class="column">
+              <p><span>Mobile</span></p>
+            </div>
+          </div>
+          <div class="three wide mobile six wide tablet twelve wide computer column sixteen wide widescreen column">
+            <p><span>Different width based on screen size</span></p>
+          </div>
+        </div>
+        
+        <div class="ui divider"></div>
+    </body>
+    </html>

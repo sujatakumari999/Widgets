@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+    body {
+  padding: 0;
+  margin: 0;
+}
+
+#code {
+  color: #ffff00cc;
+}
+#background {
+  position: absolute;
+  opacity: 0.05;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+  height: 100vh;
+  width: 100%;
+  background: #000;
+  color: #fbf4aecc;
+  -webkit-animation: Background 15s ease infinite;
+  -moz-animation: Background 15s ease infinite;
+  animation: Background 15s ease infinite;
+}
+.type-text {
+  width: 90px;
+  letter-spacing: 2px;
+  overflow: hidden;
+  font-size: 60px;
+  text-align: right;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 2px;
+
+  animation: type 3s ease, ease-in-out;
+  animation-fill-mode: forwards;
+  text-shadow: 1px 1px 1px rgba(0, 55, 180, 1);
+}
+
+.text {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100;Blue+Two+Sided+Transparent */
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba(30, 87, 153, 0) 0%,
+    rgba(30, 87, 153, 0.8) 15%,
+    rgba(30, 87, 153, 1) 19%,
+    rgba(30, 87, 153, 1) 20%,
+    rgba(41, 137, 216, 1) 50%,
+    rgba(30, 87, 153, 1) 80%,
+    rgba(30, 87, 153, 1) 81%,
+    rgba(30, 87, 153, 0.8) 85%,
+    rgba(30, 87, 153, 0) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba(30, 87, 153, 0) 0%,
+    rgba(30, 87, 153, 0.8) 15%,
+    rgba(30, 87, 153, 1) 19%,
+    rgba(30, 87, 153, 1) 20%,
+    rgba(41, 137, 216, 1) 50%,
+    rgba(30, 87, 153, 1) 80%,
+    rgba(30, 87, 153, 1) 81%,
+    rgba(30, 87, 153, 0.8) 85%,
+    rgba(30, 87, 153, 0) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    rgba(30, 87, 153, 0) 0%,
+    rgba(30, 87, 153, 0.8) 15%,
+    rgba(30, 87, 153, 1) 19%,
+    rgba(30, 87, 153, 1) 20%,
+    rgba(41, 137, 216, 1) 50%,
+    rgba(30, 87, 153, 1) 80%,
+    rgba(30, 87, 153, 1) 81%,
+    rgba(30, 87, 153, 0.8) 85%,
+    rgba(30, 87, 153, 0) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  border-radius: 8px;
+  padding: 40px 20px 30px 20px;
+}
+@keyframes blink {
+  0% {
+  }
+  100% {
+  }
+}
+@keyframes type {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    width: 290px;
+  }
+}
+
+.container {
+  background: linear-gradient(
+    180deg,
+    #010030,
+    #05183e,
+    #05276b,
+    #082f7d,
+    #060363
+  );
+  background-size: 1000% 1000%;
+}
+
+@-webkit-keyframes Background {
+  0% {
+    background-position: 55% 0%;
+  }
+  50% {
+    background-position: 46% 100%;
+  }
+  100% {
+    background-position: 55% 0%;
+  }
+}
+@-moz-keyframes Background {
+  0% {
+    background-position: 55% 0%;
+  }
+  50% {
+    background-position: 46% 100%;
+  }
+  100% {
+    background-position: 55% 0%;
+  }
+}
+@keyframes Background {
+  0% {
+    background-position: 55% 0%;
+  }
+  50% {
+    background-position: 46% 100%;
+  }
+  100% {
+    background-position: 55% 0%;
+  }
+}
+
+    </style>
+    </head>
+    <body>
+
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <img id="background" src="https://i.redd.it/inwwunbyxp7y.png">
+        
+        <div class="container">
+          <div class="type-text">
+            <div class="text">
+              <span id="code"> 404</span> PAGE NOT FOUND
+            </div>
+          </div>
+        </div>
+
+    </body>
+    </html>

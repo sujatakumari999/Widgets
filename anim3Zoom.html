@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+  
+
+#wrap {
+  transition: ease 5s;
+  display: inline-block;
+}
+
+.adpt-zooming {
+  transform: scale(2);
+}
+
+    </style>
+    </head>
+    <body>
+        <div id="wrap">
+ 
+            <img class="anim-zoom" src="http://www.menucool.com/slider/jsImgSlider/images/image-slider-4.jpg" />
+          </div>
+    </body>
+    <script>
+        var zoom = function () {
+  var ctrl = {
+    wrap: $("#wrap"),
+    adptClass: "adpt-zooming",
+    animEle: ".anim-zoom",
+
+    init: function () {
+      ctrl.actions();
+    },
+
+    actions: function () {
+      $(ctrl.animEle).on("click", function (e) {
+        ctrl.open(e);
+      });
+    },
+
+    open: function (e) {
+      if ($(ctrl.wrap).hasClass(ctrl.adptClass)) {
+        ctrl.close();
+      } else {
+        $(ctrl.wrap).css({
+          "transform-origin": e.pageX + "px " + e.pageY + "px"
+        });
+        $(ctrl.wrap).addClass(ctrl.adptClass);
+      }
+    },
+
+    close: function () {
+      $(ctrl.wrap).removeClass(ctrl.adptClass).removeAttr("style");
+    }
+  };
+
+  ctrl.init();
+
+  return ctrl;
+};
+
+$(function () {
+  zoom();
+});
+
+    </script>
+    </html>

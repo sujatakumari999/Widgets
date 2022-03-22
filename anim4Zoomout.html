@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+    
+.controls{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  height: auto;
+  flex-wrap: wrap;
+}
+  button{
+    width: 100px;
+    padding: 20px;
+    color: #000;
+    border: 1px solid #000;
+    background-color: inherit;
+  }
+
+
+.asset-frame{
+  margin-bottom: 25px;
+  width: 600px;
+  height: 400px;
+  border: 1px solid #d3d3d3;
+  background-color: #fff;
+  overflow: hidden;
+}
+  img{ width: 100%; }
+
+
+.zoom-scale{
+  animation: 2s anim-zoom-scale 1;
+  -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+animation-fill-mode: forwards;
+}
+
+
+@keyframes anim-rotate-zoom{
+  0%{ transform: rotate(0deg); }
+  50%{ transform: scale(2) rotate(25deg); }
+  100%{ transform: scale(2) rotate(25deg); }
+}
+
+@keyframes anim-zoom-scale{
+  0%{ transform: scale(1); }
+  100%{ transform: scale(2); }
+}
+
+
+    </style>
+    </head>
+    <body>
+
+ 
+        <div class="asset-frame">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/149103/frame_2.png" alt="" />
+          </div>
+         
+            <button data-animation ='zoom-scale'>Zoom</button>
+            <script>
+                $(document).ready(function(){
+  
+  $('button').click(function(){
+    var animClass = $(this).data('animation');
+    $('.asset-frame img').removeClass();
+    $('.asset-frame img').addClass(animClass);
+  });
+  
+ 
+});
+                </script>
+    </body>
+    </html>

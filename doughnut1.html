@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/95368/echarts-all-english-v2.js'></script>
+<style>
+  body {
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #000;
+}
+
+a:link,
+a:visited {
+  color: #4682b4;
+}
+
+a:hover {
+  color: #4169e1;
+}
+
+#main {
+  width: 900px;
+  height: 350px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+</style>
+</head>
+<body>
+  
+    <div id="main"></div>
+    <script>
+        	var myChart = echarts.init(document.getElementById("main"));
+
+var labelTop = {
+  normal: {
+    label: {
+      show: true,
+      position: "center",
+      formatter: "{b}",
+      textStyle: {
+        baseline: "bottom"
+      }
+    },
+    labelLine: {
+      show: false
+    }
+  }
+};
+var labelFromatter = {
+  normal: {
+    label: {
+      formatter: function (params) {
+        return 1000000 - params.value + "0";
+      },
+      textStyle: {
+        baseline: "top"
+      }
+    }
+  }
+};
+var labelBottom = {
+  normal: {
+    color: "#ccc",
+    label: {
+      show: true,
+      position: "center"
+    },
+    labelLine: {
+      show: false
+    }
+  },
+  emphasis: {
+    color: "rgba(0,0,0,0)"
+  }
+};
+var radius = [40, 55];
+
+myChart.setOption({
+  legend: {
+    x: "center",
+    y: "center",
+    data: ["Google Maps", "Facebook", "YouTube"]
+  },
+  title: {
+    text: "Dashboard",
+    subtext: "",
+    x: "center"
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      dataView: { show: true, readOnly: false },
+      magicType: {
+        show: true,
+        type: ["pie", "funnel"],
+        option: {
+          funnel: {
+            width: "20%",
+            height: "30%",
+            itemStyle: {
+              normal: {
+                label: {
+                  formatter: function (params) {
+                    return "other\n" + params.value + "%\n";
+                  },
+                  textStyle: {
+                    baseline: "middle"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  series: [
+    {
+      type: "pie",
+      center: ["10%", "30%"],
+      radius: radius,
+      x: "0%", // for funnel
+      itemStyle: labelFromatter,
+      data: [
+        { name: "other", value: 46, itemStyle: labelBottom },
+        { name: "Google Maps", value: 54, itemStyle: labelTop }
+      ]
+    },
+    {
+      type: "pie",
+      center: ["30%", "30%"],
+      radius: radius,
+      x: "20%", // for funnel
+      itemStyle: labelFromatter,
+      data: [
+        { name: "other", value: 56, itemStyle: labelBottom },
+        { name: "Facebook", value: 44, itemStyle: labelTop }
+      ]
+    },
+    {
+      type: "pie",
+      center: ["50%", "30%"],
+      radius: radius,
+      x: "40%", // for funnel
+      itemStyle: labelFromatter,
+      data: [
+        { name: "other", value: 65, itemStyle: labelBottom },
+        { name: "YouTube", value: 35, itemStyle: labelTop }
+      ]
+    },
+   
+  ]
+});
+
+    </script>
+</body>
+</html>

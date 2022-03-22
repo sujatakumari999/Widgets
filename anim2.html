@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+    #mainvisual {
+  background: url() no-repeat center center;
+  background-size: auto auto;
+  background-size: cover;
+}
+
+#mainvisual {
+  height: 700px;
+  padding: 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+#mainvisual .layer-gray {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: -10%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: skewx(16deg);
+}
+
+#mainvisual .layer-red {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: -10%;
+  margin: auto;
+  background-color: rgba(255, 0, 0, 0.4);
+  transform: skewx(-16deg);
+}
+
+.mainvisual-layer-animation {
+  animation: mainvisual-layer-animation 1.4s ease forwards;
+}
+
+.mainvisual-layer-animation2 {
+  animation: mainvisual-layer-animation 2.4s ease forwards;
+}
+
+@keyframes mainvisual-layer-animation {
+  from {
+    right: -10%;
+  }
+  to {
+    right: -65%;
+  }
+}
+
+@keyframes mainvisual-layer-animation2 {
+  from {
+    right: -10%;
+  }
+  to {
+    right: -25%;
+  }
+}
+
+#mainvisual h2 {
+  text-align: center;
+  font-size: 0;
+  letter-spacing: 0;
+  opacity: 0;
+  padding-top: 300px;
+}
+
+#mainvisual h2 {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+#mainvisual h2 img {
+  display: block;
+}
+
+#mainvisual h2 .en {
+  font-size: 2rem;
+  font-family: "lato", sans-serif;
+  font-weight: normal;
+  display: block;
+  opacity: 0;
+  color: #333;
+  text-align: left;
+  letter-spacing: 0.13em;
+  -webkit-transform: translateY(150%);
+  transform: translateY(150%);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  transition-duration: 0.8s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  text-decoration: none;
+}
+
+#mainvisual h2 .en:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  margin-top: 4px;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-duration: 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#mainvisual h2 .en:after {
+  -webkit-transition-duration: 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.title-animation {
+  animation: title-animation 5.2s ease forwards;
+}
+
+@keyframes title-animation {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.test {
+  border-top: 1px solid #333;
+  width: 300px;
+  -moz-animation: fullexpand 2s ease-out;
+  -webkit-animation: fullexpand 2s ease-out;
+}
+
+@-moz-keyframes fullexpand {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+@-webkit-keyframes fullexpand {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
+.test2 {
+  width: 30%;
+  background: #eee;
+  padding: 30px;
+  animation: anime1 1s;
+}
+
+@keyframes anime1 {
+  0% {
+    width: 0;
+    height: 50px;
+  }
+  100% {
+    width: 30%;
+    height: 50px;
+  }
+}
+
+    </style>
+    </head>
+    <body>
+        <div id="mainvisual">
+            <div class="layer-gray mainvisual-layer-animation"></div>
+            <div class="layer-red mainvisual-layer-animation2"></div>
+            <h2 class="title-animation"><span class="en title-animation">......</span>
+              <span class="en title-animation">Anim</span>
+            </h2>
+            <div class="test fullexpand"></div>
+            <div class="test2 fullexpand">....</div>
+          </div>
+        
+    </body>
+<script>
+    $(function () {
+  var boxWidth = $(".box").width();
+  var duration = 3000; 
+
+  $(".bg").animate(
+    {
+      width: boxWidth
+    },
+    duration,
+    function () {
+     
+      $(this).animate(
+        {
+          left: boxWidth,
+          width: 0
+        },
+        duration,
+        function () {
+         
+          $(".veil").animate(
+            {
+              left: boxWidth,
+              width: 0
+            },
+            duration
+          );
+        }
+      );
+    }
+  );
+});
+
+</script>
+
+    </html>

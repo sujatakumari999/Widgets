@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+    h1 {
+  font-family: "Crimson Text", serif;
+  line-height: 1.4;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  letter-spacing: -0.5px;
+  font-size: 3em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0;
+  border-top: 1px solid #000;
+  width: 282px;
+}
+
+.contain_archive {
+  width: 100%;
+}
+.row_nm_videos {
+  overflow: scroll;
+  width: 100%;
+}
+.row__inner {
+  -webkit-transition: 450ms transform;
+  transition: 450ms transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin: 70.3125px 0;
+  padding-bottom: 10px;
+}
+.tile {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 140.625px;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: 450ms all;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+.tile__img {
+  width: 250px;
+  height: 140.625px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.tile__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  opacity: 0;
+  background: -webkit-linear-gradient(
+    bottom,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-transition: 450ms opacity;
+  transition: 450ms opacity;
+}
+.tile__details:after,
+.tile__details:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: #000;
+}
+.tile__details:after {
+  margin-top: -25px;
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ecf0f1;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.tile__details:before {
+  content: "▶";
+  left: 0;
+  color: #fff;
+  width: 100%;
+  font-size: 30px;
+  margin-left: 4px;
+  margin-top: -18px;
+  text-align: center;
+  z-index: 2;
+  top: 52%;
+}
+.tile:hover .tile__details {
+  opacity: 1;
+}
+.tile__title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+.row__inner:hover {
+  -webkit-transform: translate3d(-120px, 0, 0);
+  transform: translate3d(-120px, 0, 0);
+}
+.row__inner:hover .tile {
+  opacity: 0.7;
+}
+.row__inner:hover .tile:hover {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+  opacity: 1;
+}
+.tile:hover ~ .tile {
+  -webkit-transform: translate3d(250px, 0, 0);
+  transform: translate3d(250px, 0, 0);
+}
+
+.tile_desc {
+  position: absolute;
+  bottom: 10px;
+  color: #fff;
+  font-size: 0.61em;
+  font-family: "Crimson Text";
+  margin-left: 10px;
+  font-weight: 100;
+}
+.tile_desc:after {
+  display: block;
+  width: 20px;
+  height: 0;
+  font-weight: 100;
+  border-bottom: 0.16em solid;
+  content: "";
+  color: #fff;
+}
+
+    </style>
+    <script>
+        $("#facebook_0").magnificPopup({
+  items: {
+    src:
+      "https://www.youtube.com/watch?v=SxQunWONDGM&feature=youtu.be"
+  },
+  type: "iframe"
+});
+
+$("#facebook_1").magnificPopup({
+  items: {
+    src:
+      "https://www.facebook.com/v2.5/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fvideo.php%3Fv%3D10154556367432847"
+  },
+  type: "iframe"
+});
+
+$("#facebook_2").magnificPopup({
+  items: {
+    src:
+      "https://www.facebook.com/v2.5/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fvideo.php%3Fv%3D10154556282892847"
+  },
+  type: "iframe"
+});
+
+$("#facebook_3").magnificPopup({
+  items: {
+    src:
+      "https://www.facebook.com/v2.5/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fvideo.php%3Fv%3D10154603410842847"
+  },
+  type: "iframe"
+});
+
+$("#facebook_4").magnificPopup({
+  items: {
+    src:
+      "https://www.facebook.com/v2.5/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fvideo.php%3Fv%3D10154582395637847"
+  },
+  type: "iframe"
+});
+
+$("#facebook_5").magnificPopup({
+  items: {
+    src:
+      "https://www.facebook.com/v2.5/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fvideo.php%3Fv%3D10154556282892847"
+  },
+  type: "iframe"
+});
+$("#facebook_6").magnificPopup({
+  items: {
+    src:
+      "https://www.facebook.com/v2.5/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fvideo.php%3Fv%3D10154556367432847"
+  },
+  type: "iframe"
+});
+
+    </script>
+    </head>
+    <body>
+        <div class="contain_archive">
+            <h1>Netflix Video Gallery</h2>
+              <hr>
+              <div class="row_nm_videos">
+                <div class="row__inner">
+                  <div class="tile" id="facebook_1">
+                    <div class="tile__media">
+          
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> Micheal Costello - 2PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tile" id="facebook_2">
+                    <div class="tile__media">
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> Micheal Costello - 2PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tile" id="facebook_3">
+                    <div class="tile__media">
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> Micheal Costello - 2PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="tile" id="facebook_7">
+                    <div class="tile__media">
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> Rag & Bone - 8PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="tile">
+                    <div class="tile__media">
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> DKNY - 8.30PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="tile">
+                    <div class="tile__media">
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> Oscar de la Renta - 3PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="tile">
+                    <div class="tile__media">
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> 3.1 Philip Lim - 3PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="tile">
+                    <div class="tile__media">
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> Libertine - 6PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="tile">
+                    <div class="tile__media">
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> Altuzarra - 5PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="tile vimeo">
+                    <div class="tile__media">
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> Thakoon - 7PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="tile">
+                    <div class="tile__media">
+                      <img class="tile__img" src="https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
+                      <div class="tile_desc"> Cynthia Rowley - 6PM </div>
+                    </div>
+                    <div class="tile__details">
+                      <div class="tile__title">
+                      </div>
+                    </div>
+                  </div>
+          
+                </div>
+              </div>
+          
+          </div>
+          
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+          <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
+   
+        </body>
+    </html>
