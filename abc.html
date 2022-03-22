@@ -1,0 +1,133 @@
+<div class="row rdd">
+        <c:choose>
+                        <c:when test="${familyDetails ne null}">
+        
+                            <c:forEach var="sl1" items="${familyDetails}">
+        <div class="row rdd" id="education_fields">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
+                            <strong><spring:message code="label.names" /><sup
+                                class="text-danger">*</sup></strong>
+        
+                            <div class="input-group">
+                                <input type="text" id="appDeceasedName" maxlength="30" name="appDeceasedName"
+                                    class="form-control form-control-sm my-2" value="${sl1.name}"
+                                    onkeypress="return alpha(event)">
+        
+                            </div>
+                        </div>
+        
+        
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
+                            <strong><spring:message code="label.ApplicantRelationshipwithDeceased" /><sup
+                                class="text-danger">*</sup></strong>
+                             <select id="appRelationshipwithDeceased" name="appRelationshipwithDeceased"
+                                title="Select Relationship" 
+                                class="form-control form-control-sm my-2">
+                                <option value="0">Select Relation</option>
+                                <c:forEach var="sl" items="${allRelationList}">
+                                    <option value="${sl.id}">${sl.valuesetDtlName}/${sl.valuesetDtlNameHin}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+        
+        
+        
+        
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
+                            <strong><spring:message code="label.Age" /><sup
+                                class="text-danger">*</sup></strong>
+                            <div class="input-group">
+                                <input type="text" id="Agepropertydevolved" maxlength="30" name="Agepropertydevolved"
+                                    class="form-control form-control-sm my-2" value="${sl1.age}"
+                                    onkeypress="return alpha(event)">
+        
+                            </div>
+                        </div>
+        </div>
+        </c:forEach>
+        </c:when>
+        <c:otherwise>
+        <div class="row rdd" id="education_fields">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
+                            <strong><spring:message code="label.names" /><sup
+                                class="text-danger">*</sup></strong>
+        
+                            <div class="input-group">
+                                <input type="text" id="appDeceasedName" name="appDeceasedName" maxlength="30" name="${sl1.name}"
+                                    class="form-control form-control-sm my-2"
+                                    onkeypress="return alpha(event)">
+                            </div>
+                        </div>
+        
+        
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
+                            <strong><spring:message code="label.ApplicantRelationshipwithDeceased" /><sup
+                                class="text-danger">*</sup></strong>
+                             <select id="appRelationshipwithDeceased" name="appRelationshipwithDeceased"
+                                title="Select Relationship"
+                                class="form-control form-control-sm my-2">
+                                <option value="0">Select Relation</option>
+                                <c:forEach var="sl" items="${allRelationList}">
+                                    <option value="${sl.id}">${sl.valuesetDtlName}/${sl.valuesetDtlNameHin}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+        
+        
+        
+        
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
+                            <strong><spring:message code="label.Age" /><sup
+                                class="text-danger">*</sup></strong>
+                            <div class="input-group">
+                                <input type="text" id="Agepropertydevolved" maxlength="30" name="Agepropertydevolved"
+                                    class="form-control form-control-sm my-2"
+                                    onkeypress="return alpha(event)">
+        
+                            </div>
+                        </div>
+        </div>
+        
+        </c:otherwise>
+        </c:choose>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-12 p-2" align="right">
+                            <input type="submit" name="btnUpload" value="<spring:message code="label.AddMore" />"
+                                class="btn btn-lg btnrdd button"
+                                onclick="education_fields()">
+        
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
+                          <strong><spring:message code="label.Whetherpropertydevolvedonwill" /><sup
+                                class="text-danger">*</sup></strong>
+                           <select
+                                id="yesno" title="Select Title"
+                                class="form-control form-control-sm my-2">
+                                <option value="0">Select Option</option>
+                                    <c:forEach var="sl" items="${propertydevolved}">
+                                    <option value="${sl.id}">${sl.valuesetDtlName}/${sl.valuesetDtlNameHin}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-12 p-2" align="left">
+        
+                            <input type="submit" name="btnUpload"
+                                value="<spring:message code="label.Prev" />" style="float: left;"
+                                class="btn btn-lg btnrdd button"
+                                onclick="backDataMove('ApplicantDetailsTab','liApplicantDetailsTab','liFatherHusbandDetailsTab')">
+        
+            <input type="submit" name="btnUpload" value="<spring:message code="label.Next"  />"
+                                class="btn btn-lg btnrdd button" style="float:right;"
+                                onclick="saveFormDetailTab('PermanentAdressDetailTab','liPermanentAdressDetailTab','liLegalHeirsofDeceased')">
+        
+                        </div>
+        
+        
+        
+                        <%-- <div class="col-12 col-sm-6 col-md-6 col-lg-12 p-2" align="right">
+                            <input type="submit" name="btnUpload" value="<spring:message code="label.Next" />"
+                                class="btn btn-lg btnrdd button"
+                                onclick="saveFormDetailTab('PermanentAdressDetailTab','liPermanentAdressDetailTab','liLegalHeirsofDeceased')">
+        
+                        </div> --%>
+                        
+                    </div>

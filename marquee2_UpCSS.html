@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style style="text/css">
+        .marqueeUP {
+            height: 300px;
+			
+            overflow: hidden;
+            position: relative;
+            background: #fefefe;
+            color: #333;
+            border: 1px solid #4a4a4a;
+        }
+        
+        .marqueeUP p {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            
+            text-align: center;
+            -moz-transform: translateY(100%);
+            -webkit-transform: translateY(100%);
+			
+            transform: translateY(100%);
+            -moz-animation: scroll-up 2s linear infinite;
+            -webkit-animation: scroll-up 2s linear infinite;
+            animation: scroll-up 20s linear infinite;
+        }
+        
+        @-moz-keyframes scroll-up {
+            0% {
+                -moz-transform: translateY(100%);
+            }
+            100% {
+                -moz-transform: translateY(-100%);
+            }
+        }
+        
+        @-webkit-keyframes scroll-up {
+            0% {
+                -webkit-transform: translateY(100%);
+            }
+            100% {
+                -webkit-transform: translateY(-100%);
+            }
+        }
+        
+        @keyframes scroll-up {
+            0% {
+                -moz-transform: translateY(100%);
+                -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+            }
+            100% {
+                -moz-transform: translateY(-100%);
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+
+    <div class="marqueeUP">
+        <p> Marquee in CSS </p>
+    </div>
+</body>
+
+</html>

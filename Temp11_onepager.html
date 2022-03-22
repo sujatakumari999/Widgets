@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+@import url(public/css/font-awesome.min.css);
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  line-height: 1.25;
+}
+
+p {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: #0c71c3;
+  text-decoration: none;
+  transition: all ease-in 400ms;
+}
+
+a:hover {
+  color: #00263d;
+  text-decoration: none;
+}
+
+a:focus {
+  color: #6cc1f5;
+}
+
+ul {
+  -webkit-padding-start: 20px;
+  margin-bottom: 0.5rem;
+}
+
+i {
+  font-style: inherit;
+}
+
+.btn-default,
+.btn-hot,
+.btn-download {
+  display: inline-block;
+  color: #fff;
+  padding: 0.7rem 1.6rem 0.75rem;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  font-weight: 400;
+  border-radius: 2px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-default {
+  background: #0275d8;
+}
+.btn-default:hover {
+  background: #025aa5;
+  color: #fff;
+}
+.btn-default:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-hot,
+.btn-download {
+  background: #b00000;
+}
+.btn-hot:hover,
+.btn-download:hover {
+  background: #c9302c;
+  color: #fff;
+}
+.btn-hot:focus,
+.btn-download:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-default:after,
+.btn-hot:after {
+  font-family: "FontAwesome";
+  content: "\f054";
+  font-size: 16px;
+  color: #fff;
+  opacity: 0;
+  margin-left: -13px;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-default:hover:after,
+.btn-hot:hover:after {
+  margin-left: 10px;
+  margin-right: -4px;
+  opacity: 1;
+}
+
+.btn-download:before {
+  font-family: "FontAwesome";
+  content: "\f019";
+  font-size: 16px;
+  color: #fff;
+  opacity: 0;
+  margin-left: -13px;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-download:hover:before {
+  margin-right: 10px;
+  margin-left: -4px;
+  opacity: 1;
+}
+
+.background {
+  color: #fff;
+  margin: 0;
+  width: 100%;
+  display: table;
+}
+.background .container {
+  display: table-cell;
+  vertical-align: bottom;
+  padding-bottom: 50px;
+}
+.background .container h1 {
+  color: #fff;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 5rem;
+  font-weight: 300;
+  line-height: 105%;
+  margin-bottom: 10px;
+  padding: 0 10%;
+}
+.background .container p {
+  padding: 0 10%;
+  margin-top: 0;
+}
+
+.bgimage {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9)),
+    url("http://www.coy12.com/img/bg/slider01.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 450px;
+}
+
+/*
+/////////////////////////////////////////// TYPOGRAPHY ///////////////////////////////////////////
+*/
+/* ------------- FONT AWESOME ICONS ------------- */
+.fa-database:before,
+.fa-cloud:before,
+.fa-globe:before,
+.fa-quote-left:before,
+.fa-users:before,
+.fa-trophy:before {
+  font-family: "FontAwesome";
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: normal;
+  color: #0275d8;
+}
+
+.fa-database:before,
+.fa-cloud:before,
+.fa-globe:before {
+  font-size: 40px;
+  display: block;
+  color: #fff;
+}
+
+.fa-database:before {
+  content: "\f1c0";
+}
+
+.fa-cloud:before {
+  content: "\f0c2";
+}
+
+.fa-globe:before {
+  content: "\f0ac";
+}
+
+.fa-quote-left:before {
+  content: "\f10d";
+}
+
+.fa-users:before {
+  content: "\f0c0";
+}
+
+.fa-trophy:before {
+  content: "\f091";
+}
+
+.fa-small {
+  font-size: 33px;
+}
+
+.fa-mlarge {
+  font-size: 69px;
+}
+
+.fa-large {
+  font-size: 73px;
+}
+
+/*
+////////////////////////////////////// SPACING & SEPARATORS //////////////////////////////////////
+*/
+.py-60 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.py-45 {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.feature-list .card-block {
+  padding: 2.25rem;
+}
+
+hr {
+  max-width: 150px;
+  height: 1px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 992px) {
+  hr {
+    max-width: 200px;
+  }
+}
+
+hr.blue {
+  background: #a0d0f9;
+}
+
+hr.gradient {
+  background: #0275d8;
+  background-image: -webkit-linear-gradient(left, #b6ddff, #0275d8, #b6ddff);
+  background-image: -moz-linear-gradient(left, #b6ddff, #0275d8, #b6ddff);
+  background-image: -ms-linear-gradient(left, #b6ddff, #0275d8, #b6ddff);
+  background-image: -o-linear-gradient(left, #b6ddff, #0275d8, #b6ddff);
+}
+
+.item-list hr {
+  max-width: 150px;
+}
+
+.page-left hr.gradient,
+.page-left hr.blue {
+  margin: 1rem auto 1rem 0;
+}
+
+.feature-list hr.gradient {
+  width: 100%;
+}
+
+/*
+///////////////////////////////////////////// BUTTONS ////////////////////////////////////////////
+*/
+/*.btn {
+    padding: .7rem 1.6rem 0.75rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.btn-primary, .btn-danger, .btn-download {
+	border-radius: 2px;
+}
+
+.btn-primary:after, .btn-download:after {
+	font-family: 'FontAwesome';
+	content: "\f054";
+	font-size: 16px;
+	color: #fff;
+	opacity: 0;
+	margin-left: -13px;
+	-moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn-primary:hover:after, .btn-download:hover:after {
+	margin-left: 10px;
+	margin-right: -4px;
+	opacity: 1;
+}
+
+.btn-danger, .btn-download {
+	color: #fff;
+	background-color: #b00000;
+	border-color: #b00000;
+}
+
+.btn-download:hover {
+	color: #fff;
+	background-color: #c9302c;
+    border-color: #c12e2a;
+}
+
+.btn-danger:before {
+	font-family: 'FontAwesome';
+	content: "\f019";
+	font-size: 16px;
+	color: #fff;
+	opacity: 0;
+	margin-left: -13px;
+	-moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn-danger:hover:before {
+	margin-right: 10px;
+	margin-left: -4px;
+	opacity: 1;
+}
+
+
+
+a:focus.btn-danger, a:focus.btn-download {
+    color: #f5a6a6;
+}*/
+/*
+///////////////////////////////////////////// CARDS /////////////////////////////////////////////
+*/
+@media (min-width: 768px) {
+  .flexb {
+    flex-basis: 30%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .flexb {
+    flex-basis: 47%;
+  }
+}
+
+/* TEMP */
+.navbar-inverse .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-brand {
+  padding-bottom: 0.55rem;
+  margin-left: 0.5rem;
+}
+
+.header-bg {
+  width: 100%;
+  height: 100%;
+  background: url(http://www.visitnorwich.co.uk/assets/Uploads/Events-images/Theatre-generic.jpg)
+    center center no-repeat;
+  background-size: cover;
+}
+
+/*
+///////////////////////////////////////////// TABLE /////////////////////////////////////////////
+*/
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.85rem;
+}
+
+table a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+table a:hover {
+  color: #a0d0f9;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background: #f4f6f7;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+  vertical-align: top;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: left;
+}
+
+table td:first-child {
+  font-weight: 700;
+}
+
+table th {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 1.625em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.85rem;
+    text-align: left;
+  }
+  table td:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+  table ul {
+    margin-left: 135px;
+  }
+}
+
+tbody td:nth-of-type(odd) {
+  background: #fff;
+}
+
+@media (max-width: 767px) {
+  .td-title {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+  
+<div class="container">
+  <div class="row">
+   <!------------ NAVIGATION ------------>
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"><img src="https://www.randgroup.com/wp-content/uploads/2017/08/RG_Horiz_REV.png" style="width: 200px;" /></a>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+    <div class="navbar-nav align-items-end">
+      <a class="nav-item nav-link pl-4" href="#">About</a>
+      <a class="nav-item nav-link pl-4" href="#">Products</a>
+      <a class="nav-item nav-link pl-4" href="#">Industry Solutions</a>
+      <a class="nav-item nav-link pl-4" href="#">Insights</a>
+      <a class="nav-item nav-link pl-4" href="#">Support</a>
+      <a class="nav-item nav-link pl-4" href="#">Contact</a>
+      <a class="nav-item nav-link pl-4" href="#">866-841-8044</a>
+    </div>
+  </div>
+</nav>
+
+<header class="background bgimage">
+  <div class="container">
+    <h1>Hello Headline</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipi optio dolorum accusantium, ad dolor sed.</p>
+  </div>
+</header>
+
+<section class="page-section">
+  <div class="container py-60">
+    <div class="text-center mb-5">
+      <h2>Get to Know the Rand Group Team</h2>
+      <hr class="gradient">
+    </div>
+
+    <div class="row d-flex justify-content-between">
+
+      <div class="col-lg-4 col-sm-6 flexb px-0 mb-5">
+
+        <!-- card -->
+        <div class="card h-100 border-0 text-center wow fadeInUp" data-wow-duration="600ms" data-wow-delay="100ms" style="visibility: visible; animation-name: fadeInUp;">
+          <div class="card-img-top mx-auto pt-2 d-block">
+            <i class="fa-large fa-trophy"></i>
+          </div>
+          <div class="card-block d-flex flex-column">
+            <h4 class="card-title font-weight-bold">Awards & Recognition</h4>
+            <p class="card-text mb-4">Ovi lipsim diro? Wi, wi, garius azdipiscing elit. Duis pharetra, more edit codeply varius quam elite. Duis pharetra, more varius quam vulputate. </p>
+            <a href="" class="btn-default mt-auto">Learn More</a>
+          </div>
+        </div>
+        <!-- card -->
+
+      </div>
+
+      <div class="col-lg-4 col-sm-6 flexb px-0 mb-5">
+
+        <!-- card -->
+        <div class="card h-100 border-0 text-center wow fadeInUp" data-wow-duration="600ms" data-wow-delay="300ms" style="visibility: visible; animation-name: fadeInUp;">
+          <div class="card-img-top mx-auto pt-2 d-block">
+            <i class="fa-mlarge fa-users"></i>
+          </div>
+          <div class="card-block d-flex flex-column">
+            <h4 class="card-title font-weight-bold">Leadership</h4>
+            <p class="card-text mb-4">Ovi lipsim diro? Wi, wis quam dude vuand something else impulse drive over here iputate. </p>
+            <a href="" class="btn-default mt-auto">Learn More</a>
+          </div>
+        </div>
+        <!-- card -->
+
+      </div>
+
+      <div class="col-lg-4 col-sm-6 flexb px-0 mb-5">
+
+        <!-- card -->
+        <div class="card h-100 border-0 text-center wow fadeInUp" data-wow-duration="600ms" data-wow-delay="600ms" style="visibility: visible; animation-name: fadeInUp;">
+          <div class="card-img-top mx-auto pt-2 d-block">
+            <i class="fa-large fa-quote-left"></i>
+          </div>
+          <div class="card-block d-flex flex-column">
+            <h4 class="card-title font-weight-bold">Testimonials</h4>
+            <p class="card-text mb-4">Dynamically administrate 24/365 synergy and flexible partnerships. Efficiently coordinate tactical.</p>
+            <a href="" class="btn-default mt-auto">Learn More</a>
+          </div>
+        </div>
+        <!-- card -->
+
+      </div>
+
+      <div class="col-lg-4 col-sm-6 flexb px-0 mb-5">
+
+        <!-- card -->
+        <div class="card h-100 border-0 text-center wow fadeInUp" data-wow-duration="600ms" data-wow-delay="900ms" style="visibility: visible; animation-name: fadeInUp;">
+          <div class="card-img-top mx-auto pt-2 d-block">
+            <i class="fa-large fa-trophy"></i>
+          </div>
+          <div class="card-block d-flex flex-column">
+            <h4 class="card-title font-weight-bold">Awards & Recognition</h4>
+            <p class="card-text mb-4">Ovi lipsim diro? Wi, wi, garius azdipiscing elit. Duis pharetra, more edit codeply varius quam elite. Duis pharetra, more varius quam vulputate. </p>
+            <a href="" class="btn-default mt-auto">Learn More</a>
+          </div>
+        </div>
+        <!-- card -->
+
+      </div>
+
+      <div class="col-lg-4 col-sm-6 flexb px-0 mb-5">
+
+        <!-- card -->
+        <div class="card h-100 border-0 text-center wow fadeInUp" data-wow-duration="600ms" data-wow-delay="1200ms" style="visibility: visible; animation-name: fadeInUp;">
+          <div class="card-img-top mx-auto pt-2 d-block">
+            <i class="fa-mlarge fa-users"></i>
+          </div>
+          <div class="card-block d-flex flex-column">
+            <h4 class="card-title font-weight-bold">Leadership</h4>
+            <p class="card-text mb-4">Ovi lipsim diro? Wi, wis quam dude vuand something else impulse drive over here iputate. </p>
+            <a href="" class="btn-default mt-auto">Learn More</a>
+          </div>
+        </div>
+        <!-- card -->
+
+      </div>
+
+      <div class="col-lg-4 col-sm-6 flexb px-0 mb-5">
+
+        <!-- card -->
+        <div class="card h-100 border-0 text-center wow fadeInUp" data-wow-duration="600ms" data-wow-delay="1500ms" style="visibility: visible; animation-name: fadeInUp;">
+          <div class="card-img-top mx-auto pt-2 d-block">
+            <i class="fa-large fa-quote-left"></i>
+          </div>
+          <div class="card-block d-flex flex-column">
+            <h4 class="card-title font-weight-bold">Testimonials</h4>
+            <p class="card-text mb-4">Dynamically administrate 24/365 synergy and flexible partnerships. Efficiently coordinate tactical.</p>
+            <a href="" class="btn-default mt-auto">Learn More</a>
+          </div>
+        </div>
+        <!-- card -->
+
+      </div>
+
+    </div>
+    <!-- row -->
+  </div>
+</section>
+
+<section class="page-section" style="background-color: #f4f6f7">
+  <div class="container py-60 wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-name: fadeIn;">
+    <div class="row page-left">
+      <div class="col-md-6 col-lg-4 flex-md-last">
+        <img src="http://oberospm.com/wp-content/uploads/2016/08/NetSuite-ICM-Calculations-iMac-201704.png" class="img-fluid wow fadeInRight" data-wow-duration="600ms" data-wow-delay="600ms" style="visibility: visible; animation-name: fadeInRight;" style="margin: 20px 0;"
+        />
+      </div>
+      <div class="col-md-6 col-lg-8 my-auto">
+        <h2>CTA Headline</h2>
+        <hr class="gradient">
+        <p>Energistically develop distinctive total linkage without corporate bandwidth. Monotonectally strategize leveraged imperatives vis-a-vis cooperative opportunities.</p>
+        <p>Progressively fabricate proactive functionalities with transparent information. Enthusiastically exploit orthogonal total linkage with accurate content.</p>
+        <a href="" class="btn-download mt-3">Download Now</a>
+        <a href="" class="btn-hot mt-3">Really Important</a>
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+</section>
+
+<section class="page-section" style="background-color: #004784">
+  <div class="container py-60 wow fadeIn" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-name: fadeIn;">
+    <div class="row page-left text-white">
+      <div class="col-md-6 col-lg-4 flex-md-last">
+        <img src="http://oberospm.com/wp-content/uploads/2016/08/NetSuite-ICM-Calculations-iMac-201704.png" class="img-fluid wow fadeInRight" data-wow-duration="600ms" data-wow-delay="600ms" style="visibility: visible; animation-name: fadeInRight;" style="margin: 20px 0;"
+        />
+      </div>
+      <div class="col-md-6 col-lg-8 my-auto">
+        <h2>CTA Headline</h2>
+        <hr class="blue">
+        <p>Energistically develop distinctive total linkage without corporate bandwidth. Monotonectally strategize leveraged imperatives vis-a-vis cooperative opportunities.</p>
+        <p>Progressively fabricate proactive functionalities with transparent information. Enthusiastically exploit orthogonal total linkage with accurate content.</p>
+        <a href="" class="btn-download mt-3">Download Now</a>
+        <a href="" class="btn-hot mt-3">Really Important</a>
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+</section>
+
+<section class="page-section" style="background-image: url('img/agency/backgrounds/bg-pricing.jpg')">
+  <div class="container py-60 wow fadeIn" data-wow-duration="500ms" data-wow-delay="600ms" style="visibility: visible; animation-name: fadeIn;">
+    <div class="text-center mb-5">
+      <h2>Headline Example</h2>
+      <hr class="gradient">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, quae, laborum, voluptate delectus odio doloremque error porro obcaecati nemo animi ducimus quaerat nostrum? Ab molestiae eaque et atque architecto reiciendis.</p>
+    </div>
+
+    <div class="row d-flex justify-content-around">
+
+      <div class="col-md-5 px-0 mb-5">
+
+        <!-- feature list -->
+        <div class="card h-100 feature-list">
+          <div class="card-img-top mx-auto pt-4 mt-2 d-block">
+            <img src="https://c.s-microsoft.com/en-us/CMSImages/home-applications-sales.svg?version=acea9905-427f-438c-9ecc-e21c9fdba369" style="width:120px;">
+          </div>
+
+          <div class="card-block d-flex flex-column">
+            <h4 class="font-weight-bold text-center mb-0">Microsoft Dynamics 365 Business Edition</h4>
+            <hr class="gradient">
+            <div class="mb-3">Small business solution optimized for 10–250 employees, maximum 300 seats.</div>
+            <ul class="mb-5">
+              <li>Financials (NAV 2017 / Project Madeira)</li>
+              <li>Sales</li>
+              <li>Marketing</li>
+            </ul>
+            <a href="" class="btn-default mt-auto">Learn More</a>
+          </div>
+        </div>
+        <!-- feature list -->
+
+      </div>
+
+      <div class="col-md-5 px-0 mb-5">
+
+        <!-- feature list -->
+        <div class="card h-100 feature-list">
+          <div class="card-img-top mx-auto pt-4 mt-2 d-block">
+            <img src="https://c.s-microsoft.com/en-us/CMSImages/home-applications-financials-and-operations.svg?version=6efb6ae1-a926-f8ff-36c8-8ca4c41bde8a" style="width:120px;">
+          </div>
+
+          <div class="card-block d-flex flex-column">
+            <h4 class="font-weight-bold text-center mb-0">Microsoft Dynamics 365 Enterprise Edition</h4>
+            <hr class="gradient">
+            <div class="mb-3">ERP and CRM solution optimized for 250+ employees, minimum 20 seats.</div>
+            <ul class="mb-5">
+              <li>Operations (<a href="#">Dynamics AX</a>)</li>
+              <li>Financials</li>
+              <li>Sales</li>
+              <li>Marketing</li>
+              <li>Customer Service</li>
+              <li>Field Service</li>
+              <li>Project Service Automation</li>
+              <li>Customer Insight</li>
+            </ul>
+            <a href="" class="btn-default mt-auto">Learn More</a>
+          </div>
+        </div>
+        <!-- feature list -->
+
+      </div>
+
+    </div>
+    <!-- row -->
+
+  </div>
+  <!-- container -->
+</section>
+
+<section class="page-section">
+  <div class="container">
+    <table class="table">
+      <caption>Rand Group offers flexible licensing and deployment options. Speak with an expert today to evaluate the best fit for your needs.</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="bg-primary"></th>
+          <th scope="col" class="bg-primary">
+            <div class="row text-white text-center">
+              <i class="fa-database mx-auto">On-Premise</i></a>
+            </div>
+          </th>
+          <th scope="col" class="bg-primary">
+            <div class="row text-white text-center">
+              <i class="fa-cloud mx-auto">Dedicated Cloud</i>
+            </div>
+          </th>
+          <th scope="col" class="bg-primary">
+            <div class="row text-white text-center">
+              <i class="fa-globe mx-auto">Co-Location</i>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-title">Servers</td>
+          <td data-label="On-Premise">
+            <ul>
+              <li>At your location</li>
+              <li>Purchased and owned by you</li>
+              <li>Dedicated to your business</li>
+            </ul>
+          </td>
+          <td data-label="Dedicated Cloud">
+            <ul>
+              <li>In a secure location</li>
+              <li>Pay per use</li>
+              <li>Dedicated to your business</li>
+            </ul>
+          </td>
+          <td data-label="Co-Location">
+            <ul>
+              <li>In a secure location</li>
+              <li>Purchased and owned by you</li>
+              <li>Dedicated to your business</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row" class="td-title">Scalability</td>
+          <td data-label="On-Premise">
+            <ul>
+              <li>Requires additional hardware purchase</li>
+            </ul>
+          </td>
+          <td data-label="Dedicated Cloud">
+            <ul>
+              <li>Can be dynamically provisioned</li>
+            </ul>
+          </td>
+          <td data-label="Co-Location">
+            <ul>
+              <li>Requires additional hardware purchase</li>
+              <li>Can be easily expanded on locations</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row" class="td-title">Licensing</td>
+          <td data-label="On-Premise">
+            <ul>
+              <li>Perpetual</li>
+            </ul>
+          </td>
+          <td data-label="Dedicated Cloud">
+            <ul>
+              <li>Perpetual or Subscription</li>
+            </ul>
+          </td>
+          <td data-label="Co-Location">
+            <ul>
+              <li>Perpetual or Subscription</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row" class="td-title">Cost Structure</td>
+          <td data-label="On-Premise">
+            <ul>
+              <li>Upfront cost associated with hardware and software purchases</li>
+              <li>Capital Expenditure</li>
+              <li>Ongoing costs associated with upgrades and maintenance</li>
+              <li>Ongoing costs associated with server requirements</li>
+            </ul>
+          </td>
+          <td data-label="Dedicated Cloud">
+            <ul>
+              <li>Pay per use</li>
+              <li>Operating Expense</li>
+              <li>Predictable monthly expense</li>
+              <li>Scalable</li>
+            </ul>
+          </td>
+          <td data-label="Co-Location">
+            <ul>
+              <li>Upfront cost associated with hardware and purchase</li>
+              <li>Ongoing or upfront costs associated with software purchases or subscriptions</li>
+              <li>Can use a perpetual or subscription license</li>
+              <li>Capital and/or operating expense</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-title">Maintenance and Upgrades</td>
+          <td data-label="On-Premise">
+            <ul>
+              <li>On your schedule</li>
+              <li>Funded by you</li>
+              <li>Usually done by a 3rd party</li>
+            </ul>
+          </td>
+          <td data-label="Dedicated Cloud">
+            <ul>
+              <li>Regular maintenance and upgrades provided via subscription services</li>
+              <li>Part of the subscription</li>
+              <li>The latest version is always available</li>
+            </ul>
+          </td>
+          <td data-label="Co-Location">
+            <ul>
+              <li>On your schedule</li>
+              <li>Funded by your</li>
+              <li>Usually done by a 3rd party</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-title">Security</td>
+          <td data-label="On-Premise">
+            <ul>
+              <li>Dependent on your IT team's capabilities</li>
+            </ul>
+          </td>
+          <td data-label="Dedicated Cloud">
+            <ul>
+              <li>Robust, secure and redundnant based on cloud providers agreement</li>
+            </ul>
+          </td>
+          <td data-label="Co-Location">
+            <ul>
+              <li>Secure and redundant based on a data center set-up</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-title">Power and Temperature Controls</td>
+          <td data-label="On-Premise">
+            <ul>
+              <li>Dependent on your office location and server room set-up</li>
+            </ul>
+          </td>
+          <td data-label="Dedicated Cloud">
+            <ul>
+              <li>Properly temperature and power controlled to limit risk</li>
+            </ul>
+          </td>
+          <td data-label="Co-Location">
+            <ul>
+              <li>Properly temperature and power controlled to limit risk</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="container">
+  <a href="" class="btn-default">Default</a>
+  <a href="" class="btn-hot">Button Hot</a>
+  <a href="" class="btn-download">Download</a>
+</div>
+
+<section class="page-section" style="background-image: url('img/agency/backgrounds/bg-pricing.jpg')">
+  <div class="container py-60 wow fadeIn" data-wow-duration="300ms" data-wow-delay="600ms" style="visibility: visible; animation-name: fadeIn;">
+    <div class="text-center mb-5">
+      <h2>Headline Example</h2>
+      <hr class="gradient">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, quae, laborum, voluptate delectus odio doloremque error porro obcaecati nemo animi ducimus quaerat nostrum? Ab molestiae eaque et atque architecto reiciendis.</p>
+    </div>
+
+    <div class="row justify-content-around">
+
+      <!-- Table 1 -->
+      <div class="col-md-5 d-flex text-center">
+        <div class="item-list">
+          <h3>Microsoft Dynamics 365 Business Edition</h3>
+          <hr class="gradient">
+          <div class="mb-3">Small business solution optimized for 10–250 employees, maximum 300 seats.</div>
+          <ul class="list-group mb-4">
+            <li class="list-group-item">Financials (NAV 2017 / Project Madeira)</li>
+            <li class="list-group-item">Sales</li>
+            <li class="list-group-item">Marketing</li>
+            <li class="list-group-item">X</li>
+            <li class="list-group-item">X</li>
+            <li class="list-group-item">X</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Table 2 -->
+      <div class="col-md-5 d-flex text-center">
+        <div class="item-list">
+          <h3>Microsoft Dynamics 365 Enterprise Edition</h3>
+          <hr class="gradient">
+          <div class="mb-3">ERP and CRM solution optimized for 250+ employees, minimum 20 seats.</div>
+          <ul class="list-group mb-4">
+            <li class="list-group-item">Operations (Dynamics AX)</li>
+            <li class="list-group-item">Financials</li>
+            <li class="list-group-item">Sales</li>
+            <li class="list-group-item">Marketing</li>
+            <li class="list-group-item">Customer Service</li>
+            <li class="list-group-item">Field Service</li>
+            <li class="list-group-item">Project Service Automation</li>
+            <li class="list-group-item">Customer Insight</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+      <!-- Pricing Table 3 -->
+
+    </div>
+    <!-- row -->
+
+  </div>
+  <!-- container -->
+</section>
+  </div>
+</div>
+
+</body>
+</html>

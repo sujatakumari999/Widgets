@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style> 
+  body {
+    background-color: #eaeaea;
+}
+  .tblHeadTxt {
+
+      text-align: center;
+  }
+  .divBox {
+    box-shadow: 0 0 5px;
+    background-color: #fff;
+    padding:12px 12px;
+  }
+  .divOuter {
+      padding:12px;
+  }
+  .preInput {
+      border: none;
+  }
+  .divBoxTop {
+    box-shadow: 0 0 5px;
+    background-color: #fff;
+    padding: 12px 12px;
+    min-height: 300px;
+}
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+ 
+  <div class="row ">
+    <div class="col-sm-6 divOuter"  >
+        <div class="divBoxTop">
+        <h4 class="tblHeadTxt" >REQUESTER DETAILS</h4>              
+        <table id="search-results-table" class="table table-hover"
+        id="transaction-table">
+        <tr>
+        <th>Name</th><td>${ctcRequest.requestorName}</td>
+        </tr>
+        <tr>
+        <th>Mobile Number</th><td>${ctcRequest.requestorMobile}</td>
+        </tr>
+        <tr>
+        <th>Email Address</th><td>${ctcRequest.requestorEmail}</td>
+        
+        </tr>
+        <tr>
+        <th>Shipping Address</th><td>${ctcRequest.requestorAdd}</td>
+        </tr>
+        
+        
+        </table>
+    </div>
+    </div>
+    <div class="col-sm-6 divOuter" >
+            <div class="divBoxTop">
+        <h4 class="tblHeadTxt" >REQUEST DETAILS</h4>  
+        <table id="search-results-table" class="table table-hover tbl"
+        id="transaction-table" >	
+        <tr>
+        <th>Request ID</th><td>${ctcRequest.requestId}</td>
+        </tr>
+        <tr>
+        <th>Registry of Deeds</th><td>TCT</td>
+        </tr>
+        
+        
+        <tr>
+        <th>Initial Payment</th>
+        </tr>
+        <tr>		
+        <th>Total Additional Fees</th>
+        </tr>
+        <tr>
+        <th>Transaction Status</th><td>${ctcRequest.paymentStatus}</td>
+        
+        </tr>
+        
+        </table>
+</div>
+    </div>
+  
+  </div>
+  
+   <div class="row">
+    <div class="col-sm-12 divOuter" >
+            <div class="divBox">
+        <h4 class="tblHeadTxt" >TITLE DETAILS</h4>            
+        <table id="search-results-table" class="table table-hover tbl"
+        id="transaction-table">
+        <thead class="text-uppercase">
+            <tr>
+                <th>Serial Number</th>
+                <th>Title Type</th>
+                <th>Title No.</th>
+                <th>Initial No. of Pages</th>
+                <th>Final No. of Pages</th>
+                <th>Number of Copies</th>
+                <th>Amount Paid</th>
+                <th>Additional Fees</th>
+            </tr>
+        </thead>
+
+     
+        
+        
+        <tr>
+        <td>1</td>
+        <td>${transaction.titleType}</td>
+        <td>${transaction.titleNumber}</td>
+        <td>${transaction.pageCount}</td>
+        <td>${transaction.pageCountRec}</td>
+        <td>${transaction.noOfcopies}</td>
+        <td>${payment.total_fees}</td>
+        <td>0</td>
+        </tr>
+
+        </tbody>
+        
+        
+        <tr>
+        <td colspan="7" style="font:red">
+        <font color="red" size="2" style="align: justify"><b><i>
+                        *Note: Fee may be subject to reassessment based on the final page count of the requested Title</i></b> </font>
+        </td>
+        </tr>
+        
+        <tr>
+                <td colspan="12"> 
+        <div class="col-md-12 col-lg-12 text-center">
+                    <input onclick="showBankDetails();" type="button" id="dataExchange" name ="dataExchange"  data-toggle="tooltip" data-placement="bottom" title="Make Payment"
+                                class="btn bg-dgreenbtn m-0 center-block"  value="Make Payment" />
+                    </div>
+        </td>
+                </tr>
+                    
+        
+    </table>
+    
+    </div>
+    
+    </div>
+    
+  
+  </div>
+  
+</div>
+
+</body>
+</html>

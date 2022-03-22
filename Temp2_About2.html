@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font: normal 1em/1.5 "Open Sans";
+  background-color: #ddd;
+  background-size: cover;
+}
+a {
+  color: #ccc;
+}
+.container {
+  width: 80%;
+  min-height: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+h1 {
+  text-align: center;
+  text-shadow: 0 1px white;
+  color: #02303f;
+}
+h2 {
+  color: #736861;
+  margin: 15px 0 5px;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+h6 {
+  color: #928566;
+  margin: 0;
+}
+input[type="radio"] {
+  position: absolute;
+  width: 1px; /* Setting this to 0 make it invisible for VoiceOver */
+  height: 1px; /* Setting this to 0 make it invisible for VoiceOver */
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+label {
+  display: block;
+  width: 32%;
+  border: 4px solid white;
+  position: absolute;
+  bottom: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s linear;
+}
+
+label.second {
+  left: 34%;
+}
+label.third {
+  left: 68%;
+}
+
+blockquote {
+  margin: 0;
+  padding: 30px;
+  width: 100%;
+  background-color: #db532b;
+  color: white;
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: background-color 0.6s linear;
+}
+
+blockquote:after {
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 100%;
+  border: solid transparent;
+  border-top-color: #da532b;
+  border-left-color: #da532b;
+  border-width: 10px;
+  left: 10%;
+}
+#second:checked ~ .two blockquote {
+  background-color: purple;
+}
+.two blockquote:after {
+  border: solid transparent;
+  border-top-color: purple;
+  border-left-color: purple;
+  border-width: 10px;
+}
+#third:checked ~ .three blockquote {
+  background-color: #54885f;
+}
+.three blockquote:after {
+  border: solid transparent;
+  border-top-color: #54885f;
+  border-left-color: #54885f;
+  border-width: 10px;
+}
+.quotes {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 5em;
+}
+.leftq {
+  top: -25px;
+  left: 5px;
+}
+.rightq {
+  bottom: -10px;
+  right: 5px;
+}
+img {
+  float: left;
+  margin-right: 20px;
+}
+.slide {
+  position: absolute;
+  left: -100%;
+  opacity: 0;
+  transition: all 0.6s ease-in;
+}
+
+#first:checked ~ label.first {
+  border-width: 6px;
+  border-color: #db532b;
+}
+#second:checked ~ label.second {
+  border-width: 6px;
+  border-color: purple;
+}
+#third:checked ~ label.third {
+  border: 6px solid #54885f;
+}
+
+#first:checked ~ div.one {
+  left: 0;
+  opacity: 1;
+}
+#second:checked ~ div.two {
+  left: 0;
+  opacity: 1;
+}
+#third:checked ~ div.three {
+  left: 0;
+  opacity: 1;
+}
+
+  </style>
+</head>
+<body>
+  
+
+        <h1>Time Management System</h1>
+        <div class="container">
+          <input type="radio" name="nav" id="first" checked/>
+          <input type="radio" name="nav" id="second" />
+          <input type="radio" name="nav" id="third" />
+        
+          <label for="first" class="first"></label>
+          <label for="second" class="second"></label>
+          <label for="third" class="third"></label>
+        
+          <div class="one slide">
+            <blockquote>
+              <span class="leftq quotes">&ldquo;</span> eSecureLog gives the company a decisive edge in the daily HR and managerial activities. So let the huge registers vanish in thin air and work right from your desktop.<span class="rightq quotes">&bdquo; </span>
+            </blockquote>
+            <img src="http://www.shukatsu-note.com/wp-content/uploads/2014/12/computer-564136_1280.jpg"
+              width="170" height="130" />
+            <h2>Steve Kruger</h2>
+            <h5>eSecureLog is a revolutionary software for Human Resource Management that promises to change the way HR activities have been handled so far. eSecureLog makes the functioning of the organization very lucid and the way it should be presented to the top level manager - transparent.</h5>
+            <h5>The main aspect of the eSecureLog software is the Attendance Management System. The software interacts with a Palm Reader hardware device to mark the attendance of the employees on daily basis. eSecureLog records the In-Time and Out-Time of the employees and stores in the company database.
+
+                    The positive impact due to this HR software becomes visible within just a few months of implementation. eSecureLog not only helps to manage the entire database of employees in the company; It also deals with various other important fields such as Department and Designation master information of the company. The Leave Management module helps interacts with the Attendance Management module while assigning leaves to the employees. Holiday lists over different locations can easily be maintained now, as is the management of the company's touring destinations and employees.
+                    Relevant reports can be taken from the software in various formats which can be sent over to screen, file, printer, email and web browser.</h5>
+          </div>
+        
+          <!-- <div class="two slide">
+            <blockquote>
+              <span class="leftq quotes">&ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I recommend him to anyone who wants their work done professionally. The project ... <a href="#"> read more</a>
+              <span
+                class="rightq quotes">&bdquo; </span>
+            </blockquote>
+            <img src="http://behance.vo.llnwd.net/profiles14/297668/projects/3041537/f4d6311b432c4804f1c8045459df9647.jpg" width="170" height="130" />
+            <h2>John Doe</h2>
+            <h6>Developer Relations at Woof Studios</h6>
+          </div> -->
+        
+          <div class="three slide">
+            <blockquote>
+              <span class="quotes leftq"> &ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I was pleased with his creative design and will definitely be hiring him again. <span class="rightq quotes">&bdquo; </span>
+            </blockquote>
+            <img src="http://www.shukatsu-note.com/wp-content/uploads/2014/12/computer-564136_1280.jpg" width="170" height="130" />
+            <h2>Steve Stevenson</h2>
+            <h6>CEO Woof Web Design Studios</h6>
+          </div>
+        
+        </div>
+</body>
+</html>

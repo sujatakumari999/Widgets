@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  /* Set the size of the div element that contains the map */
+#map {
+  height: 400px; /* The height is 400 pixels */
+  width: 100%; /* The width is the width of the web page */
+}
+
+  </style>
+  <script>
+  // Initialize and add the map
+function initMap() {
+  //               var imgPath = '<?php echo $block->getViewFileUrl('images/svg/icon-map-pin.svg'); ?>';
+
+  //         var iconSvg = {
+  //             url: imgPath
+  //         };
+
+  var iconSvg = {
+    url:
+      "https://bfb.ssd308.clearwebserver.co.uk/pub/static/version1558702610/frontend/Clear/battlefieldbeers/en_GB/images/svg/icon-map-pin.svg"
+  };
+
+  // The location
+  var location = { lat: 52.746, lng: -2.7402 };
+  // The map, centered at Uluru
+  var map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center: location
+  });
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map,
+    icon: iconSvg
+  });
+
+  marker.icon.scaledSize = new google.maps.Size(2 * 25, 2 * 25);
+}
+
+  </script>
+</head>
+<body>
+
+
+  
+<div class="container">
+  <div class="row">
+   <!--The div element for the map -->
+<div id="map"></div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4eYCeBMLroy84syStb4iCewN80W5GVsE&callback=initMap">
+</script>
+  </div>
+</div>
+
+</body>
+</html>

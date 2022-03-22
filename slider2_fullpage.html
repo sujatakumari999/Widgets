@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 1rem;
+	font-family: sans-serif;
+}
+
+.slider--container {
+	position: relative; /* "relative", so that h1 and images can be set absolutely */
+	height: 90vh; /* Adjust the height to your needs here */
+	width: 90vw; /* Adjust the width to your needs here */
+	margin: 0 auto;
+	overflow: hidden;
+	border-radius: 0.125rem;
+	box-shadow: 0 0 0.1rem 0.125rem rgba(0, 0, 0, 0.25);
+}
+
+.slider--heading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 1rem;
+	z-index: 99;
+	font: 300 1.25rem/1.25 Verdana, sans-serif;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: rgba(0, 0, 0, 0.5);
+	transform: translate3d(-50%, -50%, 0);
+}
+.slider--heading h1 {
+	font: 300 1.25rem/1.25 Verdana, sans-serif;
+	text-transform: uppercase;
+	color: rgba(0, 0, 0, 0.5);
+}
+/* Responsive styles for the heading */
+/* ===== == = === 30em (480px) === = == ===== */
+@media only screen and (min-width: 30em) {
+	.slider--heading h1 {
+		font-size: 1.5rem;
+	}
+}
+/* ===== == = === 48em (768px) === = == ===== */
+@media only screen and (min-width: 48em) {
+	.slider--heading h1 {
+		font-size: 1.75rem;
+	}
+}
+
+.btn {
+	margin: 1rem;
+	padding: 0.5rem;
+	font-size: 0.75rem;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #999999;
+	background: transparent;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 1px #efefef;
+	color: #333;
+}
+/* Responsive styles for the button */
+/* ===== == = === 30em (480px) === = == ===== */
+@media only screen and (min-width: 30em) {
+	.btn {
+		font-size: 1rem;
+	}
+}
+/* ===== == = === 48em (768px) === = == ===== */
+@media only screen and (min-width: 48em) {
+	.btn {
+		font-size: 1.25rem;
+	}
+}
+.btn:hover {
+	text-decoration: none;
+	color: #999;
+}
+
+.slider--image {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	animation: 45s ease-in-out infinite;
+}
+/* Name of animations and selection of images */
+.slider--image:nth-of-type(1) {
+	animation-name: slide-01;
+}
+.slider--image:nth-of-type(2) {
+	animation-name: slide-02;
+}
+.slider--image:nth-of-type(3) {
+	animation-name: slide-03;
+}
+
+/* Images are overlaid and visible or invisible due to different transparency */
+/* Moving the images with transform: scale & translate */
+/* Styles for webkit browsers */
+@-webkit-keyframes slide-01 {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale(1.4) translate(0, 0);
+	}
+	16% {
+		opacity: 1;
+		-webkit-transform: scale(1.2) translate(-20px, -10px);
+	}
+	33% {
+		opacity: 0;
+		-webkit-transform: scale(1.4) translate(0, 0);
+	}
+	50% {
+		opacity: 0;
+	}
+	67% {
+		opacity: 0;
+	}
+	84% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1.4) translate(0, 0);
+	}
+}
+@-webkit-keyframes slide-02 {
+	0% {
+		opacity: 0;
+	}
+	16% {
+		opacity: 0;
+		-webkit-transform: scale(1.2) translate(-20px, -10px);
+	}
+	33% {
+		opacity: 1;
+		-webkit-transform: scale(1.4) translate(0, 0);
+	}
+	50% {
+		opacity: 1;
+		-webkit-transform: scale(1.2) translate(-20px, 10px);
+	}
+	67% {
+		opacity: 0;
+		-webkit-transform: scale(1.4) translate(0, 0);
+	}
+	84% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@-webkit-keyframes slide-03 {
+	0% {
+		opacity: 0;
+	}
+	16% {
+		opacity: 0;
+	}
+	33% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+		-webkit-transform: scale(1.4) translate(0, 0);
+	}
+	67% {
+		opacity: 1;
+		-webkit-transform: scale(1.4) translate(-20px, 10px);
+	}
+	84% {
+		opacity: 1;
+		-webkit-transform: scale(1.2) translate(20px, -10px);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(1.4) translate(0, 0);
+	}
+}
+
+/* Styles for all other browsers */
+@keyframes slide-01 {
+	0% {
+		opacity: 1;
+		transform: scale(1.4) translate(0, 0);
+	}
+	16% {
+		opacity: 1;
+		transform: scale(1.2) translate(-20px, -10px);
+	}
+	33% {
+		opacity: 0;
+		transform: scale(1.4) translate(0, 0);
+	}
+	50% {
+		opacity: 0;
+	}
+	67% {
+		opacity: 0;
+	}
+	84% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1.4) translate(0, 0);
+	}
+}
+@keyframes slide-02 {
+	0% {
+		opacity: 0;
+	}
+	16% {
+		opacity: 0;
+		transform: scale(1.2) translate(-20px, -10px);
+	}
+	33% {
+		opacity: 1;
+		transform: scale(1.4) translate(0, 0);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.2) translate(-20px, 10px);
+	}
+	67% {
+		opacity: 0;
+		transform: scale(1.4) translate(0, 0);
+	}
+	84% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes slide-03 {
+	0% {
+		opacity: 0;
+	}
+	16% {
+		opacity: 0;
+	}
+	33% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+		transform: scale(1.4) translate(0, 0);
+	}
+	67% {
+		opacity: 1;
+		transform: scale(1.4) translate(-20px, 10px);
+	}
+	84% {
+		opacity: 1;
+		transform: scale(1.2) translate(20px, -10px);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4) translate(0, 0);
+	}
+}
+
+  </style>
+</head>
+<body>
+	<div class="slider--container">
+		<div class="slider--heading">
+			<h1 class="">Animated CSS Image Slider</h1>
+			<a class="btn" href="#">Button</a>
+		</div>
+		<img class="slider--image" src="https://img.imarketinx.de/pics/winter-01.jpg" alt="winter-01" />
+		<img class="slider--image" src="https://img.imarketinx.de/pics/winter-02.jpg" alt="winter-02" />
+		<img class="slider--image" src="https://img.imarketinx.de/pics/winter-03.jpg" alt="winter-03" />
+	</div>
+</body>
+</html>

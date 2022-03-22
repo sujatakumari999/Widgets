@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+ @import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+* {
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-box {
+  counter-reset: check;
+}
+
+.inbtn {
+  display: inline-block;
+  margin: 0;
+  font-weight: 400;
+  vertical-align: top;
+}
+.inbtn:before, .inbtn:after {
+  content: " ";
+  display: table;
+}
+.inbtn:after {
+  clear: both;
+}
+.inbtn__indicator, .inbtn__title {
+  vertical-align: middle;
+  cursor: pointer;
+}
+.inbtn__indicator {
+  float: left;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid #c0c4ca;
+}
+.inbtn__title {
+  display: block;
+  margin-left: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(37, 37, 37, 0.8);
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.inbtn input[type="radio"] + .inbtn__indicator {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.inbtn input[type="radio"] + .inbtn__indicator:before {
+  width: 8px;
+  height: 8px;
+  background-color: #10c1f3;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.inbtn input[type="radio"]:checked:disabled + .inbtn__indicator:before {
+  background-color: #c0c4ca;
+}
+.inbtn input[type="checkbox"] + .inbtn__indicator {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.inbtn input[type="checkbox"] + .inbtn__indicator:before {
+  width: 10px;
+  height: 10px;
+  background-color: #10c1f3;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.inbtn input[type="checkbox"]:checked:disabled + .inbtn__indicator:before {
+  background-color: #c0c4ca;
+}
+.inbtn input[type="radio"], .inbtn input[type="checkbox"] {
+  display: none;
+}
+.inbtn input[type="radio"] + .inbtn__indicator:before, .inbtn input[type="checkbox"] + .inbtn__indicator:before {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.inbtn input[type="radio"] ~ .inbtn__title, .inbtn input[type="checkbox"] ~ .inbtn__title {
+  padding-left: 10px;
+}
+.inbtn input[type="radio"]:checked + .inbtn__indicator, .inbtn input[type="checkbox"]:checked + .inbtn__indicator {
+  counter-increment: check;
+}
+.inbtn input[type="radio"]:checked + .inbtn__indicator:before, .inbtn input[type="checkbox"]:checked + .inbtn__indicator:before {
+  display: block;
+}
+.inbtn input[type="radio"]:checked ~ .inbtn__title, .inbtn input[type="checkbox"]:checked ~ .inbtn__title {
+  color: #10c1f3;
+}
+.inbtn input[type="radio"]:disabled + .inbtn__indicator, .inbtn input[type="checkbox"]:disabled + .inbtn__indicator {
+  background-color: #ecedef;
+}
+.inbtn input[type="radio"]:disabled + .inbtn__indicator,
+.inbtn input[type="radio"]:disabled ~ .inbtn__title, .inbtn input[type="checkbox"]:disabled + .inbtn__indicator,
+.inbtn input[type="checkbox"]:disabled ~ .inbtn__title {
+  cursor: default;
+}
+.inbtn:hover .inbtn__indicator {
+  border-color: #9ca4ad;
+}
+.inbtn:hover input[type="radio"]:disabled + .inbtn__indicator, .inbtn:hover input[type="checkbox"]:disabled + .inbtn__indicator {
+  border-color: #c0c4ca;
+}
+
+.check-box::after {
+  content: "Selected: " counter(check);
+  display: block;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+  </style>
+</head>
+<body>
+
+
+  
+<div class="container">
+  <div class="row">
+   
+<div class="check-box">
+  <ul>
+    <li>
+      <label class="inbtn">
+        <input type="checkbox" title="Checkbox 1"/><span class="inbtn__indicator"></span><span class="inbtn__title">Checkbox 1</span>
+      </label>
+    </li>
+    <li>
+      <label class="inbtn">
+        <input type="checkbox" title="Checkbox 2"/><span class="inbtn__indicator"></span><span class="inbtn__title">Checkbox 2</span>
+      </label>
+    </li>
+    <li>
+      <label class="inbtn">
+        <input type="checkbox" title="Checkbox 3"/><span class="inbtn__indicator"></span><span class="inbtn__title">Checkbox 3</span>
+      </label>
+    </li>
+    <li>
+      <label class="inbtn">
+        <input type="checkbox" title="Checkbox 4"/><span class="inbtn__indicator"></span><span class="inbtn__title">Checkbox 4</span>
+      </label>
+    </li>
+    <li>
+      <label class="inbtn">
+        <input type="checkbox" title="Checkbox 5"/><span class="inbtn__indicator"></span><span class="inbtn__title">Checkbox 5</span>
+      </label>
+    </li>
+    <li>
+      <label class="inbtn">
+        <input type="checkbox" title="Checkbox 6"/><span class="inbtn__indicator"></span><span class="inbtn__title">Checkbox 6</span>
+      </label>
+    </li>
+    <li>
+      <label class="inbtn">
+        <input type="checkbox" title="Checkbox 7"/><span class="inbtn__indicator"></span><span class="inbtn__title">Checkbox 7</span>
+      </label>
+    </li>
+    <li>
+      <label class="inbtn">
+        <input type="checkbox" title="Checkbox 8"/><span class="inbtn__indicator"></span><span class="inbtn__title">Checkbox 8</span>
+      </label>
+    </li>
+    <li>
+      <label class="inbtn">
+        <input type="checkbox" title="Checkbox 9"/><span class="inbtn__indicator"></span><span class="inbtn__title">Checkbox 9</span>
+      </label>
+    </li>
+    <li>
+      <label class="inbtn">
+        <input type="checkbox" title="Checkbox 10"/><span class="inbtn__indicator"></span><span class="inbtn__title">Checkbox 10</span>
+      </label>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+
+</body>
+</html>

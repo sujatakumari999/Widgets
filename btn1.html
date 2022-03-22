@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  *::before, *::after {
+  z-index: -1;
+}
+
+body {
+  font-family: arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 30px auto;
+  border: 1px solid orangered;
+  padding: 30px;
+  box-shadow: -1px 0px 39px -5px #67749c;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h1 {
+  color: #815252;
+}
+
+.button {
+  margin: 10px auto;
+  display: block;
+  background: none;
+  border: 2px solid;
+  padding: 10px;
+  width: 200px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.button:focus {
+  outline: none;
+}
+.button:hover {
+  color: white;
+}
+
+.button1 {
+  color: violet;
+}
+.button1::before {
+  height: 50px;
+  width: 200px;
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background: violet;
+  transform: translatex(-100%);
+}
+.button1:hover::before {
+  animation: swipe 400ms ease-in-out forwards;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translatex(-100%);
+  }
+  100% {
+    transform: translatex(0%);
+  }
+}
+.button2 {
+  color: orange;
+}
+.button2::before {
+  height: 50px;
+  width: 300px;
+  content: " ";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: orange;
+  transform: translatex(-110%) skew(-127deg, -180deg);
+}
+.button2:hover::before {
+  animation: diagonal-swipe 500ms linear forwards;
+}
+
+@keyframes diagonal-swipe {
+  from {
+    transform: translatex(-100%) skew(-127deg, -180deg);
+  }
+  to {
+    transform: translatex(-10%) skew(-127deg, -180deg);
+  }
+}
+.button3 {
+  color: #b1102c;
+}
+.button3::before, .button3::after {
+  height: 50px;
+  width: 200px;
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #b1102c;
+}
+.button3::before {
+  transform: translatex(-110%) skew(-150deg);
+}
+.button3::after {
+  transform: translatex(110%) skew(150deg);
+}
+.button3:hover::before {
+  animation: double-swipe-forward 500ms linear forwards;
+}
+.button3:hover::after {
+  animation: double-swipe-backward 500ms linear forwards;
+}
+
+@keyframes double-swipe-forward {
+  from {
+    transform: translatex(-110%) skew(-150deg);
+  }
+  to {
+    transform: translate(-10%) skew(-150deg);
+  }
+}
+@keyframes double-swipe-backward {
+  from {
+    transform: translatex(110%) skew(150deg);
+  }
+  to {
+    transform: translatex(10%) skew(150deg);
+  }
+}
+.button4 {
+  color: #2f86a2;
+}
+.button4::before, .button4::after {
+  content: "";
+  height: 50px;
+  width: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #2f86a2;
+}
+.button4::before {
+  transform: translate(-115%) skew(-127deg, -180deg);
+}
+.button4::after {
+  transform: translate(115%) skew(-127deg, -180deg);
+}
+.button4:hover::before {
+  animation: diagonal-close-forward 600ms ease-in-out forwards;
+}
+.button4:hover::after {
+  animation: diagonal-close-backward 600ms ease-in-out forwards;
+}
+
+@keyframes diagonal-close-forward {
+  from {
+    transform: translate(-115%) skew(-127deg, -180deg);
+  }
+  to {
+    transform: translate(-15%) skew(-127deg, -180deg);
+  }
+}
+@keyframes diagonal-close-backward {
+  from {
+    transform: translate(115%) skew(-127deg, -180deg);
+  }
+  to {
+    transform: translate(15%) skew(-127deg, -180deg);
+  }
+}
+
+  </style>
+</head>
+<body>
+  
+
+
+        <h1 class="te xt-center">Pure CSS Button Hover Animation
+                <div class="con  tainer">
+                  <div class="p arent">
+                    <button class="button button1">SWIPE</button>
+                    <button class="button button2">DIAGONAL SWIPE</button>
+                    <button class="button button3">DOUBLE SWIPE</button>
+                    <button class="button button4">DIAGONAL CLOSE</button>
+                  </div>
+                </div>
+              </h1>
+</body>
+</html>

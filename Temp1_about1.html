@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  .body {
+  font-family: Arial, sans-serif;
+  background: url(http://www.shukatsu-note.com/wp-content/uploads/2014/12/computer-564136_1280.jpg)
+    no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06d85f;
+  margin: 80px 0;
+}
+
+.box {
+  width: 70%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06d85f;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06d85f;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06d85f;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .box {
+    width: 70%;
+  }
+  .popup {
+    width: 70%;
+  }
+}
+
+  </style>
+</head>
+<body>
+<div class="body">
+        <h1 class="h1" >Welcome to Timesheet Management System</h1>
+        <div class="box">
+          <p class="button">eSecureLog is a revolutionary software for Human Resource Management that promises to change the way HR activities have been handled so far. eSecureLog makes the functioning of the organization very lucid and the way it should be presented to the top level manager - transparent.</p>
+        </div>
+        
+        <div class="box">
+                <p class="button">The main aspect of the eSecureLog software is the Attendance Management System. The software interacts with a Palm Reader hardware device to mark the attendance of the employees on daily basis. eSecureLog records the In-Time and Out-Time of the employees and stores in the company database.
+
+                        The positive impact due to this HR software becomes visible within just a few months of implementation. eSecureLog not only helps to manage the entire database of employees in the company; It also deals with various other important fields such as Department and Designation master information of the company. The Leave Management module helps interacts with the Attendance Management module while assigning leaves to the employees. Holiday lists over different locations can easily be maintained now, as is the management of the company's touring destinations and employees.
+                        Relevant reports can be taken from the software in various formats which can be sent over to screen, file, printer, email and web browser.</p>
+              </div>
+  
+            </div>
+
+</body>
+</html>

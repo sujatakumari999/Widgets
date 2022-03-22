@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
+*,
+*:after,
+*:before {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden;
+	font-family: "Roboto", sans-serif;
+}
+.container {
+	right: 0;
+	left: 0;
+	height: 360px;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 20px 5px rgba(135, 143, 146, 0.3);
+	box-shadow: 0px 0px 20px 5px rgba(135, 143, 146, 0.3);
+	margin: auto 5px auto 5px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.upperCard {
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/990368/BMW.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	height: 205px;
+	width: 100%;
+	color: #fff;
+	padding: 65px 0 0 30px;
+}
+.upperCard h1 {
+	font-size: 25px;
+}
+.upperCard p {
+	margin-top: 10px;
+	font-weight: lighter;
+	font-size: 14px;
+	line-height: 1.8;
+}
+
+.lowerCard {
+	overflow: visible;
+	position: relative;
+	height: 155px;
+	width: 100%;
+	background: #fff;
+	padding-left: 30px;
+	padding-right: 30px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.lowerCard button {
+	position: absolute;
+	top: -25px;
+	left: 30px;
+	width: auto;
+	height: auto;
+	font-size: 16.5px;
+	font-weight: 700;
+	border-radius: 25px;
+	border: none;
+	padding: 15px 28px;
+	background: #9c68f0;
+	color: white;
+	letter-spacing: 0.3px;
+	cursor: pointer;
+	-webkit-transition: background 0.5s;
+	-o-transition: background 0.5s;
+	transition: background 0.5s;
+	-webkit-box-shadow: 0px 2px 2px #dbc3ff;
+	box-shadow: 0px 2px 2px #dbc3ff;
+	outline: none;
+}
+.lowerCard button:hover {
+	-webkit-transition: background 0.3s;
+	-o-transition: background 0.3s;
+	transition: background 0.3s;
+	background: #a983f0;
+}
+.lowerCard ul {
+	width: 100%;
+	list-style-type: none;
+}
+.lowerCard .rHeading {
+	position: relative;
+	font-size: 15px;
+	color: rgba(0, 0, 0, 0.4);
+}
+.lowerCard .rHeading:after,
+.lowerCard .rHeading:before {
+	position: absolute;
+}
+.lowerCard .rHeading:before {
+	bottom: 3px;
+	left: 0;
+	white-space: nowrap;
+	float: left;
+	content: "................................................................."
+		".................................................................";
+}
+.lowerCard .rHeading span {
+	background: #fff;
+	z-index: 999;
+	position: relative;
+}
+.lowerCard .rHeading span:first-child {
+	padding-right: 10px;
+	color: #000;
+}
+.lowerCard .rHeading span:last-child {
+	padding-left: 10px;
+	float: right;
+	font-weight: 700;
+	font-size: 13px;
+	padding-top: 2px;
+}
+.lowerCard .rDescription {
+	overflow: visible;
+	margin-top: 10px;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.5;
+	color: rgba(0, 0, 0, 0.7);
+}
+.lowerCard .rDescription span {
+	float: right;
+	font-size: 11px;
+	font-weight: 900;
+	margin-top: 0px;
+	color: #000;
+}
+.lowerCard .rDescription b {
+	font-size: 11px;
+	color: #000;
+}
+
+@media only screen and (min-width: 450px) {
+	.container {
+		margin: auto 15px auto 15px;
+	}
+	.upperCard {
+		padding: 65px 0 0 70px;
+	}
+	.lowerCard {
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+	.lowerCard button {
+		left: 70px;
+	}
+	.lowerCard .rDescription span {
+		margin-top: -8px;
+	}
+	.lowerCard .rDescription b {
+		font-size: 17px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.container {
+		width: 550px;
+		margin: 0;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+
+@media only screen and (min-width: 700px) {
+	.container {
+		width: 620px;
+	}
+}
+
+  </style>
+
+
+
+
+</head>
+<body>
+  
+<div class="container"> 
+    <div class="upperCard">
+      <h1>Purchase complete</h1>
+      <p>  Order placed on <br /> Monday, december 21, 2015</p>
+    </div>
+    <div class="lowerCard">
+      <button id="button">Track order</button>
+      <ul> 
+        <li class="rHeading"><span>BMW X6 M</span> <span>Total</span></li>
+        <li class="rDescription">The BMW X6 M combines the spirit...<span>$<b>83,000</b>.00</span></li>
+      </ul>
+
+<!-- ..................... -->
+<!-- Header -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="fullTable" bgcolor="#e1e1e1">
+    <tr>
+      <td height="20"></td>
+    </tr>
+    <tr>
+      <td>
+        <table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="fullTable" bgcolor="#ffffff" style="border-radius: 10px 10px 0 0;">
+          <tr class="hiddenMobile">
+            <td height="40"></td>
+          </tr>
+          <tr class="visibleMobile">
+            <td height="30"></td>
+          </tr>
+  
+          <tr>
+            <td>
+              <table width="480" border="0" cellpadding="0" cellspacing="0" align="center" class="fullPadding">
+                <tbody>
+                  <tr>
+                    <td>
+                      <table width="220" border="0" cellpadding="0" cellspacing="0" align="left" class="col">
+                        <tbody>
+                          <tr>
+                            <td align="left"> <img src="https://aws.quodeit.com/static/img/new_quodeit.png" width="64" height="32" alt="logo" border="0" /></td>
+                          </tr>
+                          <tr class="hiddenMobile">
+                            <td height="40"></td>
+                          </tr>
+                          <tr class="visibleMobile">
+                            <td height="20"></td>
+                          </tr>
+                          <tr>
+                            <td style="font-size: 12px; color: #5b5b5b; font-family: 'Open Sans', sans-serif; line-height: 
+  
+  18px; vertical-align: top; text-align: left;">
+                              Prasad Lingawar
+                              <br> P-404, Uday Hilltop Residency,
+                              <br> Bhaktivedant Marg, Near PCMC tanks,
+                              <br> Ravet, Pune, Maharashtra, India
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table width="220" border="0" cellpadding="0" cellspacing="0" align="right" class="col">
+                        <tbody>
+                          <tr class="visibleMobile">
+                            <td height="20"></td>
+                          </tr>
+                          <tr>
+                            <td height="5"></td>
+                          </tr>
+                          <tr>
+                            <td style="font-size: 21px; color: #33c4ee; letter-spacing: -1px; font-family: 'Open Sans', 
+  
+  sans-serif; line-height: 1; vertical-align: top; text-align: right;">
+                              Invoice
+                            </td>
+                          </tr>
+                          <tr>
+                            <tr class="hiddenMobile">
+                              <td height="50"></td>
+                            </tr>
+                            <tr class="visibleMobile">
+                              <td height="20"></td>
+                            </tr>
+                            <tr>
+                              <td style="font-size: 12px; color: #5b5b5b; font-family: 'Open Sans', sans-serif; line-height: 
+  
+  18px; vertical-align: top; text-align: right;">
+                                <small>ORDER</small> #800000001<br />
+                                <small>AUGUST 3, 2016</small>
+                              </td>
+                            </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    </tr>
+                </tbody>
+              </table>
+            </td>
+            </tr>
+        </table>
+      </td>
+      </tr>
+  </table>
+  <!-- /Header -->
+  <!-- Order Details -->
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="fullTable" bgcolor="#e1e1e1">
+    <tbody>
+      <tr>
+        <td>
+          <table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="fullTable" bgcolor="#ffffff">
+            <tbody>
+              <tr>
+                <tr class="hiddenMobile">
+                  <td height="60"></td>
+                </tr>
+                <tr class="visibleMobile">
+                  <td height="40"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <table width="480" border="0" cellpadding="0" cellspacing="0" align="center" class="fullPadding">
+                      <tbody>
+                        <tr>
+                          <th style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #5b5b5b; font-weight: 
+  
+  normal; line-height: 1; vertical-align: top; padding: 0 10px 7px 0;" width="40%" align="left">
+                            Assessmet Name
+                          </th>
+                          <th style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #5b5b5b; font-weight: 
+  
+  normal; line-height: 1; vertical-align: top; padding: 0 0 7px;" align="left">
+                            Students Appeared
+                          </th>
+                          <th style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #5b5b5b; font-weight: 
+  
+  normal; line-height: 1; vertical-align: top; padding: 0 0 7px;" align="center">
+                            Plan Charge
+                          </th>
+                          <th style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #1e2b33; font-weight: 
+  
+  normal; line-height: 1; vertical-align: top; padding: 0 0 7px;" align="right">
+                            Total
+                          </th>
+                        </tr>
+                        <tr>
+                          <td height="1" style="background: #bebebe;" colspan="4"></td>
+                        </tr>
+                        <tr>
+                          <td height="10" colspan="4"></td>
+                        </tr>
+                        <tr>
+                          <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #33c4ee;  line-height: 18px; 
+  
+   vertical-align: top; padding:10px 0;" class="article">
+                            Python Developer
+                          </td>
+                          <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e;  line-height: 18px; 
+  
+   vertical-align: top; padding:10px 0;"><small>50</small></td>
+                          <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e;  line-height: 18px; 
+  
+   vertical-align: top; padding:10px 0;" align="center">$2</td>
+                          <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #1e2b33;  line-height: 18px; 
+  
+   vertical-align: top; padding:10px 0;" align="right">$100</td>
+                        </tr>
+  
+                        <tr>
+                          <td height="1" colspan="4" style="border-bottom:1px solid #e4e4e4"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="20"></td>
+                </tr>
+            </tbody>
+          </table>
+        </td>
+        </tr>
+    </tbody>
+  </table>
+  <!-- /Order Details -->
+  <!-- Total -->
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="fullTable" bgcolor="#e1e1e1">
+    <tbody>
+      <tr>
+        <td>
+          <table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="fullTable" bgcolor="#ffffff">
+            <tbody>
+              <tr>
+                <td>
+  
+                  <!-- Table Total -->
+                  <table width="480" border="0" cellpadding="0" cellspacing="0" align="center" class="fullPadding">
+                    <tbody>
+                      <tr>
+                        <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; 
+  
+  vertical-align: top; text-align:right; ">
+                          Available Credits
+                        </td>
+                        <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; 
+  
+  vertical-align: top; text-align:right; white-space:nowrap;" width="80">
+                          $150
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; 
+  
+  vertical-align: top; text-align:right; ">
+                          Sub Total
+                        </td>
+                        <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; 
+  
+  vertical-align: top; text-align:right; ">
+                          (-) $100
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #000; line-height: 22px; 
+  
+  vertical-align: top; text-align:right; ">
+                          <strong>Remaining Credits</strong>
+                        </td>
+                        <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #000; line-height: 22px; 
+  
+  vertical-align: top; text-align:right; ">
+                          <strong>$50</strong>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- /Table Total -->
+  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- /Total -->
+  
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="fullTable" bgcolor="#e1e1e1">
+  
+    <tr>
+      <td>
+        <table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="fullTable" bgcolor="#ffffff" style="border-radius: 0 0 10px 10px;">
+          <tr>
+            <td>
+              <table width="480" border="0" cellpadding="0" cellspacing="0" align="center" class="fullPadding">
+                <tbody>
+                  <tr>
+                    <td style="font-size: 12px; color: #33c4ee; font-family: 'Open Sans', sans-serif; line-height: 18px; 
+  
+  vertical-align: top; text-align:center;">
+                      Inspice Technologies Private Limited
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 12px; color: #5b5b5b; font-family: 'Open Sans', sans-serif; line-height: 18px; 
+  
+  vertical-align: top; text-align: left;">
+                      P4-404, Uday Hilltop Residency, Swami Bhaktivedant Marg, Ravet, Pune 412101
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr class="spacer">
+            <td height="50"></td>
+          </tr>
+  
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td height="20"></td>
+    </tr>
+  </table>
+<!-- ......................... -->
+
+
+
+    </div>
+  </div>
+
+
+</body>
+</html>

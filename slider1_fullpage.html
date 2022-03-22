@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+*{
+  overflow:hidden;
+}
+body{
+  position: relative;
+    height: 100vh;
+      background-image: linear-gradient(45deg, rgb(102, 244, 133) 0%, rgb(23, 172, 255) 100%);    
+  background-size: cover;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15);
+}
+.cb-slideshow,
+.cb-slideshow:after { 
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+  list-style:none;
+}
+.cb-slideshow:after { 
+    content: '';
+    background: transparent url(https://tympanus.net/Tutorials/CSS3FullscreenSlideshow/images/pattern.png) repeat top left; 
+}
+
+.cb-slideshow li, .cb-slideshow li span  { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+  overflow-x: hidden;
+    animation: imageAnimation 36s linear infinite 0s; 
+} 
+
+.cb-slideshow li div { 
+    z-index: 1000;
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    animation: titleAnimation 36s linear infinite 0s; 
+}
+.cb-slideshow li div h3 { 
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    font-size: 240px;
+    padding: 0;
+    line-height: 200px; 
+}
+
+.cb-slideshow li img { 
+  width:100%;
+}
+
+.cb-slideshow li img:nth-child(1){  
+  animation: imageMotion1 24s linear infinite 0s;
+    animation-delay: 6s; 
+}
+
+.cb-slideshow li img:nth-child(2){
+  animation: imageMotion2 24s linear infinite 0s;
+    animation-delay: 12s;   
+}
+
+.cb-slideshow li:nth-child(1), .cb-slideshow li:nth-child(1) span  {  
+   /* background-image: url(http://www.officialpsds.com/images/thumbs/Snow-Mountain-psd83332.png) */
+}
+.cb-slideshow li:nth-child(2), .cb-slideshow li:nth-child(2) span { 
+   /* background-image: url(http://www.officialpsds.com/images/thumbs/Snowy-Mountain-psd72842.png);*/
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3), .cb-slideshow li:nth-child(3) span { 
+   /* background-image: url(http://www.officialpsds.com/images/thumbs/Snow-Mountain-psd83332.png);*/
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4), .cb-slideshow li:nth-child(4) span { 
+   /* background-image: url(http://www.officialpsds.com/images/thumbs/Snowy-Mountain-psd72842.png);*/
+    animation-delay: 18s; 
+}
+.cb-slideshow li:nth-child(5), .cb-slideshow li:nth-child(5) span { 
+    /*background-image: url(http://www.officialpsds.com/images/thumbs/Snow-Mountain-psd83332.png);*/
+    animation-delay: 24s; 
+}
+.cb-slideshow li:nth-child(6), .cb-slideshow li:nth-child(6) span { 
+    /*background-image: url(http://www.officialpsds.com/images/thumbs/Snowy-Mountain-psd72842.png);*/
+    animation-delay: 30s; 
+}
+
+.cb-slideshow li:nth-child(2) div { 
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) div { 
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) div { 
+    animation-delay: 18s; 
+}
+.cb-slideshow li:nth-child(5) div { 
+    animation-delay: 24s; 
+}
+.cb-slideshow li:nth-child(6) div { 
+    animation-delay: 30s; 
+}
+
+@keyframes imageMotion1 {    
+  0% {
+	    opacity: 0;
+	    transform: translateY(200px);
+	}
+	100% { opacity: 1 
+	    transform: translateY(0);}
+}
+
+@keyframes imageMotion2 {    
+  0% {
+	    opacity: 0;
+	    transform: translateY(-200px);
+	}
+	100% { opacity: 1 
+	    transform: translateY(0);}
+}
+
+@keyframes imageAnimation {  
+  
+  0% {
+	    opacity: 0;
+	    transform: translateX(100%);
+	}
+	8% {
+	    opacity: 1;
+	    transform: translateX(0);
+	}
+	17% {
+	    opacity: 1;
+	    transform: translateX(0px);
+	}
+	19% {
+	    opacity: 0;
+	    transform: translateX(-200%);
+	}
+	25% { opacity: 0 }
+	100% { opacity: 0 }
+}
+
+@keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+.no-cssanimations .cb-slideshow li span{
+	opacity: 1;
+} 
+
+@media screen and (max-width: 1140px) { 
+    .cb-slideshow li div h3 { font-size: 140px }
+}
+@media screen and (max-width: 600px) { 
+    .cb-slideshow li div h3 { font-size: 80px }
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <ul class="cb-slideshow">
+      <li><img src="http://www.officialpsds.com/images/thumbs/Snow-Mountain-psd83332.png" />
+        <img src="http://www.officialpsds.com/images/thumbs/Snowy-Mountain-psd72842.png" />
+        <span>Image 01</span>
+        <div>
+          <h3>re·lax·a·tion</h3>
+        </div>
+      </li>
+      <li><img src="http://www.officialpsds.com/images/thumbs/Snowy-Mountain-psd72842.png" />
+        <span>Image 02</span>
+        <div>
+          <h3>qui·e·tude</h3>
+        </div>
+      </li>
+      <li>
+        <img src="http://www.officialpsds.com/images/thumbs/Snow-Mountain-psd83332.png" />
+        <span>Image 03</span>
+        <div>
+          <h3>bal·ance</h3>
+        </div>
+      </li>
+      <li><img src="http://www.officialpsds.com/images/thumbs/Snowy-Mountain-psd72842.png" />
+        <span>Image 04</span>
+        <div>
+          <h3>e·qua·nim·i·ty</h3>
+        </div>
+      </li>
+      <li><img src="http://www.officialpsds.com/images/thumbs/Snow-Mountain-psd83332.png" />
+        <span>Image 05</span>
+        <div>
+          <h3>com·po·sure</h3>
+        </div>
+      </li>
+      <li><img src="http://www.officialpsds.com/images/thumbs/Snowy-Mountain-psd72842.png" />
+        <span>Image 06</span>
+        <div>
+          <h3>se·ren·i·ty</h3>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

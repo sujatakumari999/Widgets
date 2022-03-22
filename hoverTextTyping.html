@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  /* GLOBAL STYLES */
+body {
+  background: #fff;
+  color: #fff;
+  font-family: monospace;
+  padding-top: 5em;
+  
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typing {
+	display: flex;
+  justify-content: center;
+	transition: all 1s linear;
+}
+.typewriter h1 {
+	overflow:hidden;white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+ transition: all 1s linear;
+}
+.typing:hover h1 {
+  background:#333;
+  border-right: .15em solid orange; /* The typwriter cursor */
+  
+  animation: 
+    typing 6.5s steps(150, end),
+    blink-caret .75s step-end infinite;
+	transition: all 1s linear;
+
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+  </style>
+</head>
+<body>
+  
+    <div class="typing">
+        <div class="typewriter">
+          <h1  style="color:#fff">BOOK OUR PARLIAMENT FIVE TIMES A MONTH AND GET IT FOR BDT20000</h1>
+            
+        </div>
+    </div>
+    <hr />
+    <br />
+    <a href="https://github.com/jahid284" target="_blank">Find me on github</a>
+    
+
+</body>
+</html>

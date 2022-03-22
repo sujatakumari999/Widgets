@@ -1,0 +1,509 @@
+<!-- <%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%> -->
+    <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="shortcut icon" href="/Images/favicon.ico" type="image/x-icon">
+<link
+	href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"
+	rel="stylesheet" />
+<link
+	href="https://cdn.datatables.net/fixedheader/3.1.5/css/fixedHeader.bootstrap4.min.css"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+<link
+	href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"
+	rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+
+<!-- -----------------------------additional links------------------- -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/RevenueDashboard1.css" />
+<link rel="stylesheet" href="css/ihover.css" />
+<link rel="stylesheet" href="css/ihover.min.css" />
+
+
+
+
+<style type="text/css">
+@media screen and (max-width: 500px) {
+	.header a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+	.header-right {
+		float: none;
+	}
+}
+
+/* Fade in tabs */
+@
+-webkit-keyframes fadeEffect {
+	from {opacity: 0;
+}
+
+to {
+	opacity: 1;
+}
+
+}
+@
+keyframes fadeEffect {
+	from {opacity: 0;
+}
+
+to {
+	opacity: 1;
+}
+
+}
+.ac-panel_Service {
+	background: #ffffff;
+	color: #fff;
+	font-size: 12px;
+	border: 1px solid #a6a6a6;
+	text-align: left;
+	text-decoration: none;
+	font-weight: bold;
+	width: 300px;
+	height: 60px;
+	position: relative;
+	margin: 3px 0;
+	box-shadow: 3px 3px 2px #888888;
+	margin-left: 15px;
+	color: #fff;
+	border-radius: 1px;
+	display: block;
+}
+
+.ac_Service-header {
+	display: block;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: lighter;
+	padding: 11.5px 10px;
+}
+
+.ac-panel_Service:before {
+	background-color: #ffffff;
+	text-align: center;
+	width: 35px;
+	max-height: 66px;
+	line-height: 3.4;
+	height: 100%;
+	position: absolute;
+	display: block;
+	padding-top: 8px;
+	top: 0px;
+	left: -36px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #58d592,
+		0px 10px 5px #999;
+	-moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #58d592, 0px
+		10px 5px #999;
+	-o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #58d592, 0px
+		10px 5px #999;
+}
+
+.ac-panel_Service:active {
+	top: 3px;
+	background-image: linear-gradient(bottom, rgb(88, 213, 146) 0%,
+		rgb(88, 213, 146) 100%); linear , left bottom, left top, color-stop(0,
+	rgb(62,184,229)), color-stop(1, rgb(44,160,202)) );
+	-webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785,
+		0px 5px 3px #999;
+	-moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px
+		5px 3px #999;
+	-o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px
+		5px 3px #999;
+	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px
+		3px #999;
+}
+
+.ac-panel_Service:active::before {
+	top: -3px;
+}
+
+.ac-panel_Service:hover {
+	color: #a6a6a6;
+	background: #a6a6a6;
+	text-decoration: none;
+}
+</style>
+
+<script>
+	/* 	$(document).ready(function() {
+			alert("q");
+			if(${paid}=='paid') {
+				
+				alert();
+			}
+			
+			
+		}); */
+	function openTab(evt, tabName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className
+					.replace(" active", "");
+		}
+		document.getElementById(tabName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+</script>
+
+    
+</head>
+<body>
+	<!-- <%@include file="header.jsp"%> -->
+	<div class="wrap">
+
+		<hr>
+		<div class="col-md-12 breadcrumb1 row p-2">
+			<div class="col-md-4">
+				<a href="dashboard">Dashboard</a>
+			</div>
+		</div>
+
+		<hr>
+
+
+		<div class="col-md-12 dashbrd row p-2">
+
+			<div class="col-lg-12" style="padding-bottom: 1.5rem !important">
+				<span class="HDRLABEL_Service">Revenue Services</span>
+			</div>
+			<div class="col-lg-12 row">
+
+				<div class="col-lg-3 box">
+
+					<!-- <article class="ac-panel_Service">
+						<a href="agriculturistSubDashboard"><header
+								class="ac_Service-header">Application for Agriculturist
+								Certificate</header></a>
+
+                    </article> -->
+                  
+
+ <!-- box1 -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="agriculturistSubDashboard">
+    <div class="img">
+        <h3 class="boxFont">Application for Agriculturist
+        Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-tree' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box1 -->
+
+
+				</div>
+
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="backAreaSubDashboard"><header
+								class="ac_Service-header">Application for Backward Area
+								Certificate</header></a>
+
+                    </article> -->
+                    
+                    
+ <!-- box2 -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="backAreaSubDashboard">
+    <div class="img">
+        <h3>Application for Backward Area
+            Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-home' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box2 -->
+
+				</div>
+
+
+
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="BonafideSubDashboard"><header
+								class="ac_Service-header">Application for Bonafide
+								Himachali Certificate</header></a>
+                    </article> -->
+                    
+                    <!-- box3 -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="BonafideSubDashboard">
+    <div class="img">
+        <h3>Application for Bonafide
+            Himachali Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-file-alt' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box3 -->
+				</div>
+
+
+
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="revenueSubDashboard"><header
+								class="ac_Service-header">Application for Caste (SC/ST)
+								Certificate</header></a>
+                    </article> -->
+                    
+                    <!-- box4 -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="revenueSubDashboard">
+    <div class="img">
+        <h3>Application for Caste (SC/ST)
+            Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-stream' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box4 -->
+				</div>
+
+
+
+				<div class="col-lg-3 box">
+
+					<!-- <article class="ac-panel_Service">
+						<a href="CharacterSubDashboard"><header
+								class="ac_Service-header">Application for Character
+								Certificate</header></a>
+
+                    </article> -->
+                    
+                       <!-- box5 -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="CharacterSubDashboard">
+    <div class="img">
+        <h3>Application for Character
+            Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-address-card' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box5 -->
+				</div>
+
+				<div class="col-lg-3 box">
+
+					<!-- <article class="ac-panel_Service">
+						<a href="#"><header class="ac_Service-header">Application
+								for Dogra Class Certificate</header></a>
+
+					</article> -->
+
+    <!-- box6 -->
+    <div class="ih-item square colored effect1 left_and_right"><a href="#">
+        <div class="img">
+            <h3>Application
+                for Dogra Class Certificate</h3>
+        </div>
+        <div class="info">
+         
+          <p class="squareFont"><i class='fas fa-male' style='font-size:36px'></i></p>
+        </div></a></div>
+    <!-- end box6 -->
+
+				</div>
+
+
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="DomicileSubDashboard"><header
+								class="ac_Service-header">Application for Domicile
+								Certificate</header></a>
+
+					</article> -->
+  <!-- box7 -->
+  <div class="ih-item square colored effect1 left_and_right"><a href="#">
+    <div class="img">
+        <h3>Application for Domicile
+            Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-home' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box7 -->
+
+				</div>
+
+
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="#"><header class="ac_Service-header">Application
+								for Freedom Fighter Certificate</header></a>
+
+                    </article> -->
+                     <!-- box8 -->
+  <div class="ih-item square colored effect1 left_and_right"><a href="#">
+    <div class="img">
+        <h3>Application
+            for Freedom Fighter Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-file-alt' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box8 -->
+
+				</div>
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="#"><header class="ac_Service-header">Application
+								for Income Certificate</header></a>
+
+                    </article> -->
+                     <!-- box9 -->
+  <div class="ih-item square colored effect1 left_and_right"><a href="#">
+    <div class="img">
+        <h3>Application
+            for Income Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-rupee-sign' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box9 -->
+
+				</div>
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="IndegentSubDashboard"><header
+								class="ac_Service-header">Application for Indigent
+								(Needy Person) Certificate</header></a>
+
+                    </article> -->
+                     <!-- box10 -->
+  <div class="ih-item square colored effect1 left_and_right"><a href="IndegentSubDashboard">
+    <div class="img">
+        <h3>Application for Indigent
+            (Needy Person) Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-file-alt' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box10 -->
+
+				</div>
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="#"><header class="ac_Service-header">Application
+								for Legal Heirs Certificate</header></a>
+
+                    </article> -->
+                    
+ <!-- box11 -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="#">
+    <div class="img">
+        <h3>Application
+            for Legal Heirs Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-file-alt' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box11 -->
+
+				</div>
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="#"><header class="ac_Service-header">Application
+								for Minority Community Certificate</header></a>
+
+                    </article> -->
+                    <!-- box12 -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="#">
+    <div class="img">
+        <h3>Application
+            for Minority Community Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-file-alt' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box12 -->
+
+				</div>
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="#"><header class="ac_Service-header">Application
+								for OBC Certificate</header></a>
+
+                    </article> -->
+                     <!-- box12 -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="#">
+    <div class="img">
+        <h3>Application
+            for OBC Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-file-alt' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box12 -->
+
+				</div>
+				<div class="col-lg-3 box">
+					<!-- <article class="ac-panel_Service">
+						<a href="#"><header class="ac_Service-header">Application
+								for Rural Area Certificate</header></a>
+
+                    </article> -->
+                      <!-- box12 -->
+ <div class="ih-item square colored effect1 left_and_right"><a href="#">
+    <div class="img">
+        <h3>Application
+            for Rural Area Certificate</h3>
+    </div>
+    <div class="info">
+     
+      <p class="squareFont"><i class='fas fa-file-alt' style='font-size:36px'></i></p>
+    </div></a></div>
+<!-- end box12 -->
+
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="carddesk clearfix" style="height: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		<%@include file="footer.jsp"%>
+	</div>
+
+
+
+</body>
+</html>

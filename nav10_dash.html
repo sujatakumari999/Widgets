@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  /*! Layout practice with only HTML & CSS - Juan Gómez Carrillo - 2019 */
+
+/* Document tweaks
+============================================== */
+
+/**
+* Sets the box-sizing to border-box to al elements on the document.
+*/
+
+* {
+ box-sizing: border-box;
+}
+
+*::before,
+*::after {
+ box-sizing: inherit;
+}
+
+/**
+* Sets the font-size to 10px for the hole document.
+* So we ensure consistence while applying rems (1rem = 10px, 1.2rem = 12px, ...)
+*/
+
+html {
+ font-size: 10px;
+}
+
+/**
+* Images fits on their containers 
+* if containers height also set to 100%.
+*/
+
+img {
+ max-height: 100%;
+ /*  object-fit: cover; */
+}
+
+/* Variables
+============================================== */
+
+/**
+* Colors
+*/
+
+:root {
+ --db: #247ba0;
+ --dg: #70c1b3;
+ --pg: #b2dbbf;
+ --pp: #d86f91;
+ --lgray: #e8e8e8;
+}
+
+/* Sections
+============================================== */
+
+/**
+* Main site wrapper classes.
+*/
+
+.wrapper {
+ padding-top: 1.5rem;
+ padding-right: 1rem;
+ padding-left: 1rem;
+ min-width: 25rem;
+}
+
+/**
+* Header classes.
+*/
+
+header {
+ height: 20rem;
+ margin-bottom: 2rem;
+ /*  background-color: #70c1b2; */
+ /*  outline: 1px dashed black; */
+}
+
+/**
+* Header 1st row classes.
+*/
+
+.nav-top {
+ display: flex;
+ justify-content: space-between;
+ height: 6rem;
+ margin-bottom: 2rem;
+ /*  outline: 1px dashed black; */
+}
+
+.nav-top a {
+ outline: none;
+}
+
+.nav-top a:first-child {
+ height: 100%;
+}
+
+.nav-top > *:not(:first-child) {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex: 3;
+ margin-left: 0.7rem;
+ border-top: 3px solid var(--pg);
+ border-bottom: 3px solid var(--pg);
+ color: var(--db);
+}
+
+.nav-top a:not(:first-child) {
+ /*  background: pink; */
+ flex: 1;
+ max-width: 10rem;
+ font-size: 2rem;
+ text-decoration: none;
+}
+
+.nav-top p {
+ white-space: wrap;
+ margin: 0;
+ font-size: 1.1rem;
+ font-family: "Ubuntu", sans-serif;
+ font-weight: bold;
+ user-select: none;
+}
+
+/**
+* Header 2nd row classes.
+*/
+
+.nav-main {
+ display: flex;
+ height: 12rem;
+ /*  outline: 1px dashed black; */
+}
+
+.nav-main a {
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ flex: 1;
+ padding: 0.5rem;
+ background-color: var(--lgray);
+ text-decoration: none;
+ text-align: center;
+ font-size: 1rem;
+ font-family: "Ubuntu", sans-serif;
+ font-weight: bold;
+ color: var(--db);
+ outline: 0;
+ transition-duration: 0.3s;
+}
+
+.nav-main a:first-of-type {
+ background-color: var(--pg);
+}
+
+.nav-main a i {
+ font-size: 4rem;
+}
+
+.nav-main a:hover {
+ background-color: #fff;
+}
+
+.nav-main a::after {
+ content: "";
+ position: absolute;
+ bottom: 0;
+ width: 0;
+ height: 4px;
+ background: var(--db);
+ transition-duration: 0.5s;
+}
+
+.nav-main a:focus::after {
+ width: 100%;
+}
+
+.nav-main a:focus {
+ background-color: #fff;
+}
+
+/**
+* Main content classes.
+*/
+
+main {
+ min-height: 80rem;
+ margin-bottom: 2rem;
+ background-color: var(--pp);
+}
+
+.main-card-1 {
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ flex: 1;
+ height: 10rem;
+ padding-top: 0.3rem;
+ padding-right: 1rem;
+ border-top: 4px solid var(--db);
+ color: var(--db);
+ background-color: #fff;
+ /*  outline: 1px dashed black; */
+}
+
+.main-card-1 p {
+ margin: 0;
+ font-family: "Ubuntu", sans-serif;
+ font-size: 3rem;
+ flex-grow: 1;
+}
+
+.main-card-1 a {
+ outline: none;
+ text-decoration: none;
+ color: var(--db);
+ font-size: 2rem;
+ margin-left: 1.2rem;
+ transition-duration: 0.2s;
+}
+
+.main-card-1 a:hover {
+ color: var(--pg);
+ text-shadow: 2px 2px 1px var(--db);
+}
+
+.main-card-1 a:focus {
+ color: var(--pg);
+ text-shadow: 2px 2px 1px var(--db);
+}
+
+.card-item-2 {
+ display: flex;
+}
+
+/**
+* Aside classes.
+*/
+
+aside {
+ min-height: 40rem;
+ margin-bottom: 2rem;
+ background-color: var(--db);
+}
+
+/**
+* Footer classes.
+*/
+
+footer {
+ height: 20rem;
+ width: 100%;
+ background-color: var(--lgray);
+}
+
+/**
+* Other classes.
+*/
+
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1></h1>
+  <p></p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+   <!-- Main container that wraps the header
+ the main section and the aside -->
+<div class="wrapper">
+
+ <header>
+  <!--  Top navbar with logo, web title and icons-->
+  <nav class="nav-top">
+   <a href="#"><img src="https://via.placeholder.com/100?text=Logo" alt="Brand's logo"></a>
+   <p>This is my first serious layout project!</p>
+   <a href="#"><i class="far fa-question-circle"></i></a>
+   <a href="#"><i class="far fa-envelope"></i></a>
+   <a href="#"><i class="fas fa-door-open"></i></a>
+  </nav>
+
+  <!--  Main navbar with only icons -->
+  <nav class="nav-main">
+   <a href="#"><i class="fas fa-home"></i></a>
+   <a href="#"><i class="far fa-id-card"></i><p>My account</p></a>
+   <a href="#"><i class="far fa-folder"></i><p>My documents</p></a>
+   <a href="#"><i class="far fa-list-alt"></i><p>More info</p></a>
+  </nav>
+ </header>
+
+ <main>
+  <div class="main-card-1">
+   <div class="card-item-1">
+    <p>Inbox</p>
+   </div>
+   <div class="card-item-2">
+    <a href="#"><i class="fas fa-sync-alt"></i></a>
+    <a href="#"><i class="fas fa-cog"></i></a>
+    <a href="#"><i class="fas fa-chevron-down"></i></a>
+   </div>
+  </div>
+
+  <div class="main-card-1">
+   <div class="card-item-1">
+    <p>My Favorites</p>
+   </div>
+   <div class="card-item-2">
+    <a href="#"><i class="fas fa-sync-alt"></i></a>
+    <a href="#"><i class="fas fa-cog"></i></a>
+    <a href="#"><i class="fas fa-chevron-down"></i></a>
+   </div>
+  </div>
+
+  <div class="main-card-1">
+   <div class="card-item-1">
+    <p>Main Apps</p>
+   </div>
+   <div class="card-item-2">
+    <a href="#"><i class="fas fa-sync-alt"></i></a>
+    <a href="#"><i class="fas fa-cog"></i></a>
+    <a href="#"><i class="fas fa-chevron-down"></i></a>
+   </div>
+  </div>
+  <!-- .main-card-1 -->
+ </main>
+
+ <aside></aside>
+</div>
+<!-- .wrapper-->
+
+<footer></footer>
+  </div>
+</div>
+
+</body>
+</html>

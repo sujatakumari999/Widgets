@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<style>
+#chartdiv {
+	width		: 100%;
+	height		: 500px;
+	font-size	: 11px;
+}					
+</style>
+
+<script>
+/**
+ * amCharts Plugin: Order items by value
+ * This plugin will look for setting `orderByField` and will re-order items
+ * in ascending order before chart loads
+ */
+
+AmCharts.addInitHandler( function( chart ) {
+
+  // Check if `orderByField` is set
+  if ( chart.orderByField === undefined ) {
+    // Nope - do nothing
+    return;
+  }
+
+  // Re-order the data provider
+  chart.dataProvider.sort( function( a, b ) {
+    if ( a[ chart.orderByField ] > b[ chart.orderByField ] ) {
+      return -1;
+    } else if ( a[ chart.orderByField ] == b[ chart.orderByField ] ) {
+      return 0;
+    }
+    return 1;
+  } );
+
+}, [ "serial" ] );
+
+
+/**
+ * Create the chart
+ */
+var chart = AmCharts.makeChart( "chartdiv", {
+  "type": "serial",
+  "theme": "light",
+  "orderByField": "visits",
+  "dataProvider": [ {
+    "country": "USA",
+    "visits": 1523
+  }, {
+    "country": "China",
+    "visits": 1882
+  }, {
+    "country": "Japan",
+    "visits": 1809
+  }, {
+    "country": "Germany",
+    "visits": 1996
+  }, {
+    "country": "UK",
+    "visits": 800
+  }, {
+    "country": "France",
+    "visits": 1114
+  }, {
+    "country": "India",
+    "visits": 325
+  }, {
+    "country": "Spain",
+    "visits": 711
+  }, {
+    "country": "Netherlands",
+    "visits": 665
+  }, {
+    "country": "Russia",
+    "visits": 580
+  }, {
+    "country": "South Korea",
+    "visits": 512
+  }, {
+    "country": "Canada",
+    "visits": 1441
+  }, {
+    "country": "Brazil",
+    "visits": 995
+  } ],
+  "valueAxes": [ {
+    "gridColor": "#FFFFFF",
+    "gridAlpha": 0.2,
+    "dashLength": 0
+  } ],
+  "gridAboveGraphs": true,
+  "startDuration": 1,
+  "graphs": [ {
+    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "fillAlphas": 0.8,
+    "lineAlpha": 0.2,
+    "type": "column",
+    "valueField": "visits"
+  } ],
+  "chartCursor": {
+    "categoryBalloonEnabled": false,
+    "cursorAlpha": 0,
+    "zoomable": false
+  },
+  "categoryField": "country",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "gridAlpha": 0,
+    "tickPosition": "start",
+    "tickLength": 20
+  },
+  "export": {
+    "enabled": true
+  }
+
+} );
+</script>
+
+</head>
+
+<body>
+
+
+  
+<div class="container">
+  <div class="row">
+ 
+<div id="chartdiv"></div>
+  </div>
+</div>
+
+</body>
+</html>
